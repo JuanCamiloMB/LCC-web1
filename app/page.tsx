@@ -1,101 +1,52 @@
-import Image from "next/image";
+import ScreenLoader from "./components/ScreenLoader";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    <div className="w-full h-screen bg-[#65a30d]">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+      consequuntur hic iusto exercitationem libero. Omnis saepe sunt quis
+      doloremque temporibus aut consequatur architecto eaque, mollitia magnam?
+      Corrupti perferendis inventore maxime. Labore sequi, tempore sint neque
+      temporibus fugiat, obcaecati amet porro vitae eligendi doloribus quia
+      optio eveniet. Dicta, reprehenderit. Illum dolorem quia quaerat animi
+      laborum debitis! Ipsum rem doloribus provident vel sequi, repellat
+      obcaecati odit ea vitae voluptate nisi asperiores, a sint reprehenderit
+      optio accusantium. Nulla reiciendis modi architecto, nobis ipsam commodi
+      dolore consequuntur quia repudiandae ea aut inventore ipsum eligendi culpa
+      quas reprehenderit accusantium itaque dolores numquam obcaecati eos. Ut
+      tempore exercitationem ea illo corporis nisi provident id veritatis
+      facilis fugiat eligendi dolorum in dolores aliquam cum, rem totam debitis
+      ipsum tenetur alias impedit ab repellendus quidem placeat! Voluptas,
+      praesentium commodi? Ex, tenetur. Repellat natus maiores, alias molestiae
+      cumque labore incidunt, quod quidem dicta voluptatum nobis dolore sunt
+      maxime quo velit quisquam. Eveniet excepturi ullam assumenda vitae ipsa
+      consectetur accusamus repudiandae harum incidunt eum, beatae fugit culpa
+      fugiat praesentium impedit consequatur perferendis perspiciatis dolorum?
+      Ducimus hic vero fugiat dignissimos recusandae dolorem qui porro id quos
+      eius. Vel totam accusamus maxime praesentium aperiam, odio neque nulla
+      similique repudiandae eligendi molestias enim harum odit qui, unde
+      assumenda alias, architecto dicta nostrum veniam minus libero corrupti?
+      Nemo voluptas totam provident sunt explicabo molestias, repudiandae
+      consequatur ducimus nihil cumque voluptate praesentium dicta eos quas
+      suscipit expedita deleniti, culpa sapiente. Cum tempore perspiciatis
+      expedita nisi ullam quos odio reprehenderit quam, incidunt ea officiis
+      nemo animi voluptatibus aut dolore sit eaque adipisci beatae provident
+      molestias labore qui accusamus nulla accusantium. Animi laborum neque odio
+      nihil velit quod voluptates eius sequi dolore mollitia exercitationem,
+      error nulla consequatur temporibus sapiente quas voluptas dolores
+      doloremque sed, illo corrupti! Ducimus et eaque, obcaecati dolorem autem
+      laborum reiciendis? Sapiente placeat quo perferendis. Reiciendis animi
+      earum ipsam quo rem in sapiente, dolores velit ut eveniet, doloribus totam
+      atque! Cum aspernatur saepe, quae repellendus ab odit laborum distinctio
+      aliquam voluptatem vero repudiandae doloribus natus praesentium
+      reiciendis, provident est ducimus deserunt, quidem dignissimos. Dolorum
+      sed placeat temporibus, ipsum, nostrum provident, optio perferendis
+      voluptatibus accusantium dolorem aliquid labore eius. Labore ut distinctio
+      neque error eveniet numquam in veritatis dolorem. Non, tempora rem iure
+      illo commodi corrupti deleniti molestias enim, assumenda sint obcaecati,
+      consequatur voluptatibus soluta voluptatum. Id maiores facilis dolor
+      necessitatibus? Quod perspiciatis maxime quae praesentium, vel amet eaque,
+      ipsam velit totam impedit consequuntur earum.
     </div>
   );
 }
