@@ -107,7 +107,7 @@ export default function Header() {
     <svg
       width="150"
       height="150"
-      className="overflow-visible svg-icon absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2"
+      className="overflow-visible svg-icon absolute z-50 top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2"
       viewBox="0 0 52 66"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

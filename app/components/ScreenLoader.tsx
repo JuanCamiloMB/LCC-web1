@@ -1,8 +1,7 @@
-"use client";
+"use client"
 
-import { useEffect } from "react";
-
-import gsap from "gsap";
+import { useEffect } from "react"
+import gsap from "gsap"
 
 export default function ScreenLoader() {
   useEffect(() => {
@@ -10,10 +9,10 @@ export default function ScreenLoader() {
       height: 0,
       duration: 0.6,
       delay: 2,
-    });
-  }, []);
+    })
+  }, [])
 
   return (
-    <div className="h-screen w-full overflow-hidden fixed loader-screen flex items-center justify-center bg-black" />
-  );
+    <div className="loader-screen fixed z-50 flex h-screen w-full items-center justify-center overflow-hidden bg-black" />
+  )
 }

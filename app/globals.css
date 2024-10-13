@@ -10,6 +10,11 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .title-stroke {
+    color: transparent;
+    -webkit-text-stroke: 1px #ffffff;
+  }
 }
 
 @layer base {
