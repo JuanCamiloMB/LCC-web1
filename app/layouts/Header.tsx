@@ -14,7 +14,7 @@ export default function Header() {
       },
     })
 
-    timeline.fromTo(".svg-icon", { rotate: 360 }, { rotate: 0 })
+    timeline.fromTo(".header-icon", { rotate: 360 }, { rotate: 0 })
 
     timeline.fromTo(
       "#path-1",
@@ -75,7 +75,7 @@ export default function Header() {
     )
 
     timeline.to(
-      ".svg-icon",
+      ".header-icon",
       {
         opacity: 0.1,
         duration: 0.3,
@@ -83,15 +83,16 @@ export default function Header() {
       "-=0.2"
     )
 
-    timeline.to(".svg-icon", {
+    timeline.to(".header-icon", {
       opacity: 1,
       duration: 0.1,
     })
 
     timeline.fromTo(
-      ".svg-icon",
+      ".header-icon",
       {
         rotate: 180,
+        scale: 1,
       },
       {
         scale: 0.5,
@@ -107,7 +108,7 @@ export default function Header() {
     <svg
       width="150"
       height="150"
-      className="svg-icon absolute left-[50%] top-[50%] z-50 -translate-x-1/2 -translate-y-1/2 overflow-visible"
+      className="header-icon fixed left-[50%] top-[50%] z-50 -translate-x-1/2 -translate-y-1/2 overflow-visible"
       viewBox="0 0 52 66"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
