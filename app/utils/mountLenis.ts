@@ -1,28 +1,28 @@
-import { useEffect } from "react";
-
-import gsap from "gsap";
-import Lenis from "lenis";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { useEffect } from "react"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/dist/ScrollTrigger"
+import Lenis from "lenis"
 
 export default function mountLenis() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
-    });
+    })
 
-    lenis.on("scroll", ScrollTrigger.update);
+    lenis.on("scroll", ScrollTrigger.update)
 
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger)
 
     gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
+      lenis.raf(time * 1000)
+    })
 
-    gsap.ticker.lagSmoothing(0);
+    gsap.ticker.lagSmoothing(0)
 
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      lenis.destroy();
-    };
-  }, []);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+      lenis.destroy()
+    }
+  }, [])
 }
