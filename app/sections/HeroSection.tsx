@@ -47,6 +47,7 @@ export default function HeroSection() {
         setDisableHoverEffect(false)
       },
     })
+
     heroTimeline.fromTo(
       ".hero-title",
       {
@@ -93,19 +94,18 @@ export default function HeroSection() {
       },
 
       ease: "none",
-    })
+    }) <=
+      gsap.to(".hero-image", {
+        scrollTrigger: {
+          trigger: ".hero-wrapper",
+          start: "50% bottom",
 
-    gsap.to(".hero-image", {
-      scrollTrigger: {
-        trigger: ".hero-wrapper",
-        start: "50% bottom",
-
-        end: "bottom bottom",
-        scrub: true,
-      },
-      ease: "none",
-      xPercent: -10,
-    })
+          end: "bottom bottom",
+          scrub: true,
+        },
+        ease: "none",
+        xPercent: -10,
+      })
 
     gsap.to(".hero-title", {
       scrollTrigger: {
