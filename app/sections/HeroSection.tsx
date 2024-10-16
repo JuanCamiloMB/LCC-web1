@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import Cover from "@/app/assets/bg-2.png"
 import Star from "@/app/assets/star.svg"
 import { cn } from "@/lib/utils"
@@ -10,22 +10,20 @@ import Image from "next/image"
 import { SyneFont } from "../fonts"
 
 export default function HeroSection() {
-  const [disableHoverEffect, setDisableHoverEffect] = useState(true)
-
   // /* Mouse Hover */
   useEffect(() => {
-    const objects = document.querySelectorAll<HTMLElement>(".hero-image")
-
     function parallax(e: MouseEvent) {
-      if (disableHoverEffect) return
-      objects.forEach((object) => {
-        const moving_value: number =
-          Number(object.getAttribute("data-value")) || 0
-        const x = (e.clientX * moving_value) / 200
+      const object = document.querySelector(".hero-image")
+      if (!object) return
+      const moving_value: number =
+        Number(object.getAttribute("data-value")) || 0
+      const x = (e.clientX * moving_value) / 200
 
-        const y = (e.clientY * moving_value) / 200
+      const y = (e.clientY * moving_value) / 200
 
-        object.style.transform = `translateX(${x}px) translateY(${y}px)`
+      gsap.set(object, {
+        x,
+        y,
       })
     }
 
@@ -34,7 +32,7 @@ export default function HeroSection() {
     return () => {
       document.removeEventListener("mousemove", parallax)
     }
-  }, [disableHoverEffect])
+  }, [])
 
   // /* Hero Transition */
   useEffect(() => {
@@ -42,9 +40,6 @@ export default function HeroSection() {
       defaults: {
         stagger: 0.15,
         delay: 2,
-      },
-      onComplete: () => {
-        setDisableHoverEffect(false)
       },
     })
 
@@ -122,7 +117,6 @@ export default function HeroSection() {
       end: () => "+=100",
       scrub: true,
       onEnter: () => {
-        setDisableHoverEffect(true)
         gsap.to(".header-icon", {
           scale: 0.5,
           rotate: 0,
@@ -131,7 +125,6 @@ export default function HeroSection() {
         })
       },
       onLeave: () => {
-        setDisableHoverEffect(true)
         gsap.to(".header-icon", {
           scale: 0.3,
           rotate: 180,
@@ -140,9 +133,7 @@ export default function HeroSection() {
         })
       },
       onEnterBack: () => {
-        setTimeout(() => {
-          setDisableHoverEffect(false)
-        }, 1200)
+        setTimeout(() => {}, 1200)
 
         gsap.to(".hero-image", {
           transform: "none",
@@ -166,11 +157,11 @@ export default function HeroSection() {
         alt="cover-image"
         src={Cover}
         priority
-        data-value={-2}
-        className="hero-image absolute -left-1/3 bottom-0 h-full object-contain"
+        data-value={-4}
+        className="hero-image absolute -left-[30%] bottom-0 h-full object-contain"
       />
 
-      <div className="absolute left-[33%] top-[30%] w-full max-w-3xl">
+      <div className="absolute left-[30%] top-[32%] w-full max-w-3xl">
         <div className="hero-title text-[7.2rem] font-extrabold leading-[1] tracking-tighter text-white">
           <span className="mix-blend-difference">M</span>OTION
         </div>
