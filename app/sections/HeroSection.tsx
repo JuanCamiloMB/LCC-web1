@@ -97,7 +97,7 @@ export default function HeroSection() {
         scrub: true,
       },
       ease: "none",
-      xPercent: -10,
+      xPercent: -14,
     })
 
     gsap.to(".hero-title", {
@@ -108,7 +108,7 @@ export default function HeroSection() {
         scrub: true,
       },
       ease: "none",
-      yPercent: -160,
+      yPercent: -200,
     })
 
     gsap.to(".bar-section", {

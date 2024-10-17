@@ -13,6 +13,15 @@ export default function PinSection() {
         end: "bottom top",
         pin: true,
         pinSpacing: false,
+      },
+    })
+
+    gsap.to(".pinned", {
+      scrollTrigger: {
+        trigger: ".pinned",
+        start: "top top",
+        endTrigger: "#space-section",
+        end: "top bottom",
         onUpdate: (self) => {
           const rotation = self.progress * 360
           gsap.to(".revealer", { rotation })
@@ -24,8 +33,8 @@ export default function PinSection() {
       scrollTrigger: {
         trigger: ".pinned",
         start: "top top",
-        endTrigger: "#next-section",
-        end: "top bottom",
+        endTrigger: "#cards-section",
+        end: "bottom bottom",
         onUpdate: (self) => {
           const progress = self.progress
           const clipPath = `polygon(
@@ -43,28 +52,47 @@ export default function PinSection() {
       },
     })
 
-    // gsap.to(".pinned", {
-    //   scrollTrigger: {
-    //     trigger: "#next-section",
-    //     start: "top top",
-    //     endTrigger: "#space-section",
-    //     end: "bottom top",
-    //     pin: true,
-    //   },
-    // })
+    gsap.to("#cards-section", {
+      scrollTrigger: {
+        trigger: "#cards-section",
+        start: "bottom bottom",
+        endTrigger: "#space-section",
+        end: "bottom top",
+        pin: true,
+        pinSpacing: false,
+      },
+    })
 
     gsap.to(".pinned", {
       scrollTrigger: {
-        trigger: "#space-section",
-        start: "top bottom",
+        trigger: "#cards-section",
+        start: "bottom bottom",
         endTrigger: "#space-section",
-        end: "bottom top",
-        scrub: 1,
+        end: "20% bottom",
+        scrub: true,
         onUpdate: (self) => {
           const progress = self.progress
           const left = 35 + 15 * progress
           gsap.to(".revealer", {
             left: `${left}%`,
+            ease: "none",
+            duration: 0,
+          })
+        },
+      },
+    })
+
+    gsap.to(".revealer", {
+      scrollTrigger: {
+        trigger: "#space-section",
+        start: "top center",
+        end: "bottom bottom",
+        scrub: true,
+        onUpdate: (self) => {
+          const scale = 1 + 12 * self.progress
+
+          gsap.to(".revealer", {
+            scale,
             ease: "none",
             duration: 0,
           })

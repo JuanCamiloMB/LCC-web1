@@ -2,7 +2,7 @@ export default function SpaceSection() {
   return (
     <section
       id="space-section"
-      className="relative h-[100vh] w-full bg-red-400"
+      className="relative z-[-1] h-screen w-full bg-transparent"
     >
       White Section
     </section>

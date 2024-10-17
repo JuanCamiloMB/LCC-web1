@@ -11,12 +11,11 @@ export default function Home() {
       <AwwardSection />
       <PinSection />
       <CardsSection />
-
-      <section id="next-section" className="h-[300px] w-full bg-red-800">
-        Another Section
-      </section>
-
       <SpaceSection />
+
+      <div className="relative z-10 h-screen">
+        <div className="text-7xl font-bold text-black">Hello World</div>
+      </div>
     </div>
   )
 }

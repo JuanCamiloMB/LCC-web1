@@ -70,7 +70,7 @@ export default function CardsSection() {
       style={{
         transform: "50% 0%",
       }}
-      className="relative h-[140vh] w-full bg-black"
+      className="relative h-[200vh] w-full bg-black"
     >
       <div className="card-content flex h-full w-full flex-col items-start gap-20 p-4">
         <div className="flex items-center gap-4">
