@@ -111,14 +111,26 @@ export default function HeroSection() {
       yPercent: -160,
     })
 
+    gsap.to(".bar-section", {
+      scrollTrigger: {
+        trigger: "#hero-section",
+        start: "20% top",
+        end: "bottom top",
+        scrub: true,
+        markers: true,
+      },
+      ease: "power1.inOut",
+      xPercent: -100,
+    })
+
     ScrollTrigger.create({
-      trigger: "#header-section",
-      start: "50% bottom",
+      trigger: "#hero-section",
+      start: "center center",
       end: () => "+=100",
       scrub: true,
       onEnter: () => {
         gsap.to(".header-icon", {
-          scale: 0.5,
+          scale: 0.3,
           rotate: 0,
           ease: "none",
           duration: 0.25,
@@ -133,11 +145,6 @@ export default function HeroSection() {
         })
       },
       onEnterBack: () => {
-        setTimeout(() => {}, 1200)
-
-        gsap.to(".hero-image", {
-          transform: "none",
-        })
         gsap.to(".header-icon", {
           scale: 0.5,
           rotate: 0,
@@ -161,9 +168,9 @@ export default function HeroSection() {
         className="hero-image absolute -left-[30%] bottom-0 h-full object-contain"
       />
 
-      <div className="absolute left-[30%] top-[32%] w-full max-w-3xl">
-        <div className="hero-title text-[7.2rem] font-extrabold leading-[1] tracking-tighter text-white">
-          <span className="mix-blend-difference">M</span>OTION
+      <div className="absolute left-[30%] top-[36%] w-full max-w-3xl">
+        <div className="hero-title text-[7.2rem] font-extrabold leading-[1] tracking-tighter text-white mix-blend-difference">
+          MOTION
         </div>
         <div className="hero-title ml-[260px] text-[7.2rem] font-extrabold leading-[1] tracking-tighter text-white">
           SC
@@ -174,56 +181,116 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="awward-name absolute right-0 top-1/2 flex w-10 -translate-y-1/2 flex-col items-center justify-between gap-8 bg-black px-2 py-4">
-        <p className="text-lg font-semibold text-white" style={{}}>
-          W.
-        </p>
-        <p className="text-sm font-semibold tracking-tighter text-white [writing-mode:vertical-lr]">
-          ShinThant
-        </p>
-      </div>
+      <div className="bar absolute bottom-0 inline-flex h-auto w-full items-center overflow-hidden bg-gray-900 px-20 py-1">
+        <div className="bar-section flex w-screen shrink-0 items-center gap-14">
+          <div
+            className={cn(
+              SyneFont.className,
+              "flex-none text-[20px] font-extrabold text-white"
+            )}
+          >
+            DISCUSS YOUR IDEA
+          </div>
 
-      <div className="bar absolute bottom-0 flex h-auto w-full items-center gap-14 overflow-hidden bg-gray-900 px-20 py-1">
-        <div
-          className={cn(
-            SyneFont.className,
-            "flex-none text-[20px] font-extrabold text-white"
-          )}
-        >
-          DISCUSS YOUR IDEA
+          <Image
+            src={Star}
+            className="h-7 w-7 object-contain"
+            alt="star-icon"
+          />
+
+          <div
+            className={cn(
+              SyneFont.className,
+              "flex-none text-[20px] font-extrabold text-white"
+            )}
+          >
+            EXPEND VISION
+          </div>
+
+          <Image
+            src={Star}
+            className="h-7 w-7 object-contain"
+            alt="star-icon"
+          />
+
+          <div
+            className={cn(
+              SyneFont.className,
+              "flex-none text-[20px] font-extrabold text-white"
+            )}
+          >
+            BE MOTIVATED
+          </div>
+
+          <Image
+            src={Star}
+            className="h-7 w-7 object-contain"
+            alt="star-icon"
+          />
+
+          <div
+            className={cn(
+              SyneFont.className,
+              "flex-none text-[20px] font-extrabold text-white"
+            )}
+          >
+            ALIGN WITH PASSION
+          </div>
         </div>
+        <div className="bar-section ml-[260px] flex w-screen shrink-0 items-center gap-14">
+          <div
+            className={cn(
+              SyneFont.className,
+              "flex-none text-[20px] font-extrabold text-white"
+            )}
+          >
+            DISCUSS YOUR IDEA
+          </div>
 
-        <Image src={Star} className="h-7 w-7 object-contain" alt="star-icon" />
+          <Image
+            src={Star}
+            className="h-7 w-7 object-contain"
+            alt="star-icon"
+          />
 
-        <div
-          className={cn(
-            SyneFont.className,
-            "flex-none text-[20px] font-extrabold text-white"
-          )}
-        >
-          EXPEND VISION
-        </div>
+          <div
+            className={cn(
+              SyneFont.className,
+              "flex-none text-[20px] font-extrabold text-white"
+            )}
+          >
+            EXPEND VISION
+          </div>
 
-        <Image src={Star} className="h-7 w-7 object-contain" alt="star-icon" />
+          <Image
+            src={Star}
+            className="h-7 w-7 object-contain"
+            alt="star-icon"
+          />
 
-        <div
-          className={cn(
-            SyneFont.className,
-            "flex-none text-[20px] font-extrabold text-white"
-          )}
-        >
-          BE MOTIVATED
-        </div>
+          <div
+            className={cn(
+              SyneFont.className,
+              "flex-none text-[20px] font-extrabold text-white"
+            )}
+          >
+            BE MOTIVATED
+          </div>
 
-        <Image src={Star} className="h-7 w-7 object-contain" alt="star-icon" />
+          <Image
+            src={Star}
+            className="h-7 w-7 object-contain"
+            alt="star-icon"
+          />
 
-        <div
-          className={cn(
-            SyneFont.className,
-            "flex-none text-[20px] font-extrabold text-white"
-          )}
-        >
-          ALIGN WITH PASSION
+          <div
+            className={cn(
+              SyneFont.className,
+              "flex-none text-[20px] font-extrabold text-white"
+            )}
+          >
+            ALIGN WITH PASSION
+          </div>
         </div>
       </div>
     </section>
