@@ -68,7 +68,7 @@ export default function PinSection() {
         trigger: "#cards-section",
         start: "bottom bottom",
         endTrigger: "#space-section",
-        end: "20% bottom",
+        end: "40% bottom",
         scrub: true,
         onUpdate: (self) => {
           const progress = self.progress
@@ -93,8 +93,7 @@ export default function PinSection() {
 
           gsap.to(".revealer", {
             scale,
-            ease: "none",
-            duration: 0,
+            ease: "power1.out",
           })
         },
       },

@@ -62,6 +62,17 @@ export default function CardsSection() {
       },
       color: "black",
     })
+
+    gsap.to(".card-section-image", {
+      scrollTrigger: {
+        trigger: ".pinned",
+        start: "top top",
+        endTrigger: "#space-section",
+        end: "top bottom",
+        scrub: true,
+      },
+      scale: 1.2,
+    })
   }, [])
 
   return (
@@ -108,16 +119,31 @@ export default function CardsSection() {
               design without functionality is like a sports car with no engine.
             </div>
             <div className="flex flex-col items-start">
-              <Image
-                className="h-[400px] w-[200px] rounded-lg object-contain"
-                src={Robot1}
-                alt="robot-1"
-              />
-              <Image
-                className="h-[400px] w-[200px] rounded-lg object-contain"
-                src={Robot2}
-                alt="robot-2"
-              />
+              <div
+                style={{
+                  clipPath: "inset(0 0 0 0)",
+                }}
+                className="h-[400px] w-[200px]"
+              >
+                <Image
+                  className="card-section-image h-full w-full rounded-lg object-contain"
+                  src={Robot1}
+                  alt="robot-1"
+                />
+              </div>
+
+              <div
+                style={{
+                  clipPath: "inset(0 0 0 0)",
+                }}
+                className="h-[400px] w-[200px]"
+              >
+                <Image
+                  className="card-section-image h-full w-full rounded-lg object-contain"
+                  src={Robot2}
+                  alt="robot-2"
+                />
+              </div>
             </div>
           </div>
 

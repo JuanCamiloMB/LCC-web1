@@ -2,6 +2,7 @@ import AwwardSection from "./sections/AwwardSection"
 import CardsSection from "./sections/CardsSection"
 import HeroSection from "./sections/HeroSection"
 import PinSection from "./sections/PinSection"
+import SliderSection from "./sections/SliderSection"
 import SpaceSection from "./sections/SpaceSection"
 
 export default function Home() {
@@ -12,10 +13,7 @@ export default function Home() {
       <PinSection />
       <CardsSection />
       <SpaceSection />
-
-      <div className="relative z-10 h-screen">
-        <div className="text-7xl font-bold text-black">Hello World</div>
-      </div>
+      <SliderSection />
     </div>
   )
 }

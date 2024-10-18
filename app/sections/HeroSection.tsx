@@ -117,7 +117,6 @@ export default function HeroSection() {
         start: "20% top",
         end: "bottom top",
         scrub: true,
-        markers: true,
       },
       ease: "power1.inOut",
       xPercent: -100,
@@ -125,7 +124,7 @@ export default function HeroSection() {
 
     ScrollTrigger.create({
       trigger: "#hero-section",
-      start: "center center",
+      start: "60% center",
       end: () => "+=100",
       scrub: true,
       onEnter: () => {
@@ -182,7 +181,7 @@ export default function HeroSection() {
       </div>
 
       <div className="bar absolute bottom-0 inline-flex h-auto w-full items-center overflow-hidden bg-gray-900 px-20 py-1">
-        <div className="bar-section flex w-screen shrink-0 items-center gap-14">
+        <div className="bar-section flex w-full shrink-0 items-center gap-14">
           <div
             className={cn(
               SyneFont.className,
@@ -237,7 +236,7 @@ export default function HeroSection() {
             ALIGN WITH PASSION
           </div>
         </div>
-        <div className="bar-section ml-[260px] flex w-screen shrink-0 items-center gap-14">
+        <div className="bar-section flex w-full shrink-0 items-center gap-14">
           <div
             className={cn(
               SyneFont.className,
