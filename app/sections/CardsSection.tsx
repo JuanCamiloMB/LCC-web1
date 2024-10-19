@@ -1,8 +1,8 @@
 "use client"
 
 import { useEffect } from "react"
-import Robot1 from "@/app/assets/robot-1.jpg"
-import Robot2 from "@/app/assets/robot-2.jpg"
+import Robot1 from "@/app/assets/robots/robot-6.jpg"
+import Robot2 from "@/app/assets/robots/robot-7.jpg"
 import { cn } from "@/lib/utils"
 import gsap from "gsap"
 import Image from "next/image"
@@ -81,7 +81,7 @@ export default function CardsSection() {
       style={{
         transform: "50% 0%",
       }}
-      className="relative h-[200vh] w-full bg-black"
+      className="relative h-[220vh] w-full bg-black"
     >
       <div className="card-content flex h-full w-full flex-col items-start gap-20 p-4">
         <div className="flex items-center gap-4">
