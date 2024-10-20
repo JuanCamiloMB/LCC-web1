@@ -8,6 +8,7 @@ import Robot2 from "@/app/assets/robots/robot-4.jpg"
 import Robot3 from "@/app/assets/robots/robot-5.jpg"
 import { cn } from "@/lib/utils"
 import gsap from "gsap"
+import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { ArrowDown } from "lucide-react"
 import Image from "next/image"
 import SplitType from "split-type"
@@ -44,6 +45,28 @@ export default function SliderSection() {
         scrub: true,
       },
       xPercent: -80,
+    })
+
+    ScrollTrigger.create({
+      trigger: "#slider-section",
+      start: "top bottom",
+      end: () => "bottom top",
+      scrub: true,
+      onEnter: () => {
+        gsap.to(".header-icon #inner-1,#inner-2,#path-1,#path-2", {
+          fill: "black",
+        })
+      },
+      onLeave: () => {
+        gsap.to(".header-icon #inner-1,#inner-2,#path-1,#path-2", {
+          fill: "white",
+        })
+      },
+      onLeaveBack: () => {
+        gsap.to(".header-icon #inner-1,#inner-2,#path-1,#path-2", {
+          fill: "white",
+        })
+      },
     })
   }, [])
 
