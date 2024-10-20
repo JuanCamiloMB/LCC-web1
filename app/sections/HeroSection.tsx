@@ -10,11 +10,14 @@ import Image from "next/image"
 import { SyneFont } from "../fonts"
 
 export default function HeroSection() {
-  // /* Mouse Hover */
+  /* Mouse Hover */
   useEffect(() => {
     function parallax(e: MouseEvent) {
       const object = document.querySelector(".hero-image")
-      if (!object) return
+      const loader = document.querySelector(".loader-screen") as HTMLElement
+
+      if (!object || (loader && loader.style.display !== "none")) return
+
       const moving_value: number =
         Number(object.getAttribute("data-value")) || 0
       const x = (e.clientX * moving_value) / 200
@@ -34,7 +37,7 @@ export default function HeroSection() {
     }
   }, [])
 
-  // /* Hero Transition */
+  /* Hero Transition */
   useEffect(() => {
     const heroTimeline = gsap.timeline({
       defaults: {
@@ -76,7 +79,7 @@ export default function HeroSection() {
     )
   }, [])
 
-  // /* Scroll Trigger */
+  /* Scroll Trigger */
   useEffect(() => {
     gsap.to("#hero-section", {
       scrollTrigger: {

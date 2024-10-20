@@ -15,6 +15,9 @@ export default function ScreenLoader() {
 
       onComplete: () => {
         enableScroll()
+        gsap.set(".loader-screen", {
+          display: "none",
+        })
       },
     })
   }, [])
