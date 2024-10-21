@@ -1,8 +1,8 @@
 "use client"
 
 import { useEffect } from "react"
-import RobotStatueBg from "@/app/assets/robot-female-bg.jpg"
-import RobotStatue from "@/app/assets/robot-female.png"
+import RobotStatue from "@/app/assets/freepik-export-20241021055021nyHF.png"
+import RobotStatueBg from "@/app/assets/futuristic-female-robot-background.jpg"
 import { cn } from "@/lib/utils"
 import gsap from "gsap"
 import Image from "next/image"
@@ -56,7 +56,7 @@ export default function StatueSection() {
         trigger: "#statue-text-section",
         start: "top top",
         endTrigger: "#statue-section",
-        end: "bottom top",
+        end: "bottom bottom",
         pin: true,
       },
     })
@@ -69,7 +69,7 @@ export default function StatueSection() {
         trigger: "#statue-description-section",
         start: "top top",
         endTrigger: "#statue-section",
-        end: "bottom top",
+        end: "bottom bottom",
         pin: true,
       },
     })
@@ -149,7 +149,10 @@ export default function StatueSection() {
         />
       </section>
 
-      <section className="absolute left-0 top-[780vh] z-40 h-[420vh] w-full">
+      <section
+        id="statue-robot-section"
+        className="absolute left-0 top-[780vh] z-40 h-[420vh] w-full"
+      >
         <Image
           priority
           alt="robot-statue"
