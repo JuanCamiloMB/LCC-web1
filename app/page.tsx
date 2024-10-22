@@ -1,6 +1,7 @@
 import AwwardSection from "./sections/AwwardSection"
 import BioSection from "./sections/BioSection"
 import CardsSection from "./sections/CardsSection"
+import EndSection from "./sections/EndSection"
 import HeroSection from "./sections/HeroSection"
 import ImagesSection from "./sections/ImagesSection"
 import PinSection from "./sections/PinSection"
@@ -20,6 +21,7 @@ export default function Home() {
       <StatueSection />
       <BioSection />
       <ImagesSection />
+      <EndSection />
     </div>
   )
 }

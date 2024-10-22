@@ -17,7 +17,7 @@ export default function BioSection() {
         trigger: "#bio-section-container",
         start: "top top",
         endTrigger: "#images-section-container",
-        end: "20% bottom",
+        end: "200px bottom",
         pin: true,
         pinSpacing: false,
         onLeaveBack: () => {
@@ -40,7 +40,6 @@ export default function BioSection() {
   }, [])
 
   /* Page Transition */
-
   useEffect(() => {
     const bioText = new SplitType(".bio-text", {
       types: "lines",
