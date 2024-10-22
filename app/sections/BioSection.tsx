@@ -17,7 +17,7 @@ export default function BioSection() {
         trigger: "#bio-section-container",
         start: "top top",
         endTrigger: "#images-section-container",
-        end: "200px bottom",
+        end: "180px bottom",
         pin: true,
         pinSpacing: false,
         onLeaveBack: () => {
@@ -68,7 +68,7 @@ export default function BioSection() {
         scrollTrigger: {
           trigger: "#bio-section-container",
           start: "40% bottom",
-          end: "40% top",
+          end: "top top",
           scrub: true,
         },
       }
@@ -84,7 +84,7 @@ export default function BioSection() {
         scrollTrigger: {
           trigger: "#bio-section-container",
           start: "40% bottom",
-          end: "40% top",
+          end: "top top",
           scrub: true,
         },
       }

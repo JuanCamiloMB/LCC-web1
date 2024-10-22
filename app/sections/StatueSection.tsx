@@ -32,7 +32,6 @@ export default function StatueSection() {
       scrollTrigger: {
         trigger: "#statue-text-section",
         start: "top bottom",
-        markers: true,
         endTrigger: "#statue-section",
         end: "60% bottom",
         scrub: true,

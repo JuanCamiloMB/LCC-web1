@@ -89,7 +89,7 @@ export default function PinSection() {
         end: "bottom bottom",
         scrub: true,
         onUpdate: (self) => {
-          const scale = 1 + 12 * self.progress
+          const scale = 1 + 14 * self.progress
 
           gsap.to(".revealer", {
             scale,
