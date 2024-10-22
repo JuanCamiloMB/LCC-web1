@@ -1,6 +1,14 @@
 import { cn } from "@/lib/utils"
-import { GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react"
+import {
+  GitHubLogoIcon,
+  LinkedInLogoIcon,
+  TwitterLogoIcon,
+} from "@radix-ui/react-icons"
 import { PoppinFont } from "../fonts"
+
+const GITHUB_ACC = process.env.GITHUB_ACC
+const LINKEDIN_ACC = process.env.LINKEDIN_ACC
+const TWITTER_ACC = process.env.TWITTER_ACC
 
 export default function EndSection() {
   return (
@@ -30,26 +38,41 @@ export default function EndSection() {
             </div>
           </div>
           <div className="col-span-3">
-            <div className="flex flex-col items-end gap-5 pr-10">
-              <div className="flex items-center gap-2">
-                <LinkedinIcon className="text-white" size={16} />
+            <div className="flex flex-col items-start gap-5 pl-[60%]">
+              <a
+                href={LINKEDIN_ACC}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2"
+              >
+                <LinkedInLogoIcon className="text-white" />
                 <div className="text-xs text-white">Linkedin</div>
-              </div>
-              <div className="flex items-center gap-2">
-                <GithubIcon className="text-white" size={16} />
+              </a>
+              <a
+                href={GITHUB_ACC}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2"
+              >
+                <GitHubLogoIcon className="text-white" />
                 <div className="text-xs text-white">Github</div>
-              </div>
+              </a>
 
-              <div className="flex items-center gap-2">
-                <TwitterIcon className="text-white" size={16} />
+              <a
+                href={TWITTER_ACC}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2"
+              >
+                <TwitterLogoIcon className="text-white" />
                 <div className="text-xs text-white">Twitter</div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
         <div
           className={
-            "text-[200px] font-bold uppercase leading-[1] tracking-tighter text-white"
+            "text-[200px] font-bold uppercase leading-[1] tracking-tighter text-gray-200"
           }
         >
           Motion Scape

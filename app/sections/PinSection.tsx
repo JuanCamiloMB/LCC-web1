@@ -29,29 +29,6 @@ export default function PinSection() {
       },
     })
 
-    gsap.to(".pinned", {
-      scrollTrigger: {
-        trigger: ".pinned",
-        start: "top top",
-        endTrigger: "#cards-section",
-        end: "bottom bottom",
-        onUpdate: (self) => {
-          const progress = self.progress
-          const clipPath = `polygon(
-            ${45 - 45 * progress}% ${0 + 0 * progress}%,
-            ${55 + 45 * progress}% ${0 + 0 * progress}%,
-            ${55 + 45 * progress}% ${100 - 0 * progress}%,
-            ${45 - 45 * progress}% ${100 - 0 * progress}%
-            )`
-          gsap.to(".revealer-1, .revealer-2", {
-            clipPath: clipPath,
-            ease: "none",
-            duration: 0,
-          })
-        },
-      },
-    })
-
     gsap.to("#cards-section", {
       scrollTrigger: {
         trigger: "#cards-section",
@@ -89,7 +66,7 @@ export default function PinSection() {
         end: "bottom bottom",
         scrub: true,
         onUpdate: (self) => {
-          const scale = 1 + 14 * self.progress
+          const scale = 1 + 30 * self.progress
 
           gsap.to(".revealer", {
             scale,
@@ -102,20 +79,13 @@ export default function PinSection() {
 
   return (
     <section className="pinned absolute top-[100vh] z-[2] h-screen w-full">
-      <div className="revealer absolute left-[35%] mt-[300px] h-[120px] w-[120px] -translate-x-[50%]">
-        <div
-          className="revealer-1 absolute left-0 top-0 h-full w-full bg-white"
-          style={{
-            clipPath: "polygon(45% 0%, 55% 0%, 55% 100%, 45% 100%)",
-          }}
-        />
-        <div
-          className="revealer-2 absolute left-0 top-0 h-full w-full rotate-90 bg-white"
-          style={{
-            clipPath: "polygon(45% 0%, 55% 0%, 55% 100%, 45% 100%)",
-          }}
-        />
-      </div>
+      <div
+        style={{
+          aspectRatio: 1,
+          clipPath: "polygon(50% 0,79% 90%,2% 35%,98% 35%,21% 90%)",
+        }}
+        className="revealer absolute left-[35%] mt-[300px] w-[160px] -translate-x-[50%] bg-white"
+      />
     </section>
   )
 }

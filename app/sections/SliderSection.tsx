@@ -170,10 +170,10 @@ export default function SliderSection() {
       scrollTrigger: {
         trigger: "#slider-section",
         start: "top top",
-        end: () => `+=1000`,
+        end: () => `+=1200`,
         scrub: true,
       },
-      rotate: 180,
+      rotate: 270,
     })
   }, [])
 

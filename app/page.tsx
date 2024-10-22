@@ -1,9 +1,9 @@
-import AwwardSection from "./sections/AwwardSection"
 import BioSection from "./sections/BioSection"
-import CardsSection from "./sections/CardsSection"
 import EndSection from "./sections/EndSection"
+import FixedSection from "./sections/FixedSection"
 import HeroSection from "./sections/HeroSection"
 import ImagesSection from "./sections/ImagesSection"
+import PinBackground from "./sections/PinBackground"
 import PinSection from "./sections/PinSection"
 import SliderSection from "./sections/SliderSection"
 import SpaceSection from "./sections/SpaceSection"
@@ -13,9 +13,9 @@ export default function Home() {
   return (
     <div className="h-auto w-full bg-[#4338ca]">
       <HeroSection />
-      <AwwardSection />
+      <FixedSection />
       <PinSection />
-      <CardsSection />
+      <PinBackground />
       <SpaceSection />
       <SliderSection />
       <StatueSection />

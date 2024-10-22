@@ -106,6 +106,29 @@ export default function StatueSection() {
     })
   }, [])
 
+  /* Statue & Background */
+  useEffect(() => {
+    gsap.to(["#statue-section", "#statue-robot-section"], {
+      scrollTrigger: {
+        trigger: "#statue-text-section",
+        start: "80% bottom",
+        end: "bottom bottom",
+
+        onEnter: () => {
+          gsap.to(["#statue-section", "#statue-robot-section"], {
+            opacity: 1,
+          })
+        },
+        onEnterBack: () => {
+          gsap.to(["#statue-section", "#statue-robot-section"], {
+            opacity: 0,
+          })
+        },
+      },
+      opacity: 1,
+    })
+  }, [])
+
   return (
     <>
       <section
@@ -138,7 +161,7 @@ export default function StatueSection() {
 
       <section
         id="statue-section"
-        className="relative z-20 h-[420vh] w-full px-5 text-9xl text-white"
+        className="relative z-20 h-[420vh] w-full px-5 text-9xl text-white opacity-0"
       >
         <Image
           priority
@@ -150,7 +173,7 @@ export default function StatueSection() {
 
       <section
         id="statue-robot-section"
-        className="absolute left-0 top-[780vh] z-40 h-[420vh] w-full"
+        className="absolute left-0 top-[780vh] z-40 h-[420vh] w-full opacity-0"
       >
         <Image
           priority

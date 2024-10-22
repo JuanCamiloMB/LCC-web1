@@ -12,10 +12,12 @@ import Image8 from "@/app/assets/kid-robot/robot-8.jpg"
 import Image9 from "@/app/assets/kid-robot/robot-9.jpg"
 import Image10 from "@/app/assets/kid-robot/robot-10.jpg"
 import { cn } from "@/lib/utils"
+import { GitHubLogoIcon } from "@radix-ui/react-icons"
 import gsap from "gsap"
-import { GithubIcon } from "lucide-react"
 import Image from "next/image"
 import { AfacadFont, PoppinFont } from "../fonts"
+
+const GITHUB_REPO = process.env.GITHUB_REPO
 
 export default function ImagesSection() {
   /* Layout Transition */
@@ -102,15 +104,19 @@ export default function ImagesSection() {
               "flex items-center gap-4 rounded-lg bg-gray-600 px-6 py-2 text-white"
             )}
           >
-            <div
+            <a
+              href={GITHUB_REPO}
+              aria-label="github-repo"
+              target="_blank"
+              rel="noreferrer"
               className={cn(
                 "text-sm font-medium tracking-tight",
                 AfacadFont.className
               )}
             >
               View On Github
-            </div>
-            <GithubIcon size={16} />
+            </a>
+            <GitHubLogoIcon />
           </button>
         </div>
 

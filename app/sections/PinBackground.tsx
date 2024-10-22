@@ -8,7 +8,7 @@ import gsap from "gsap"
 import Image from "next/image"
 import { reckoner } from "../fonts"
 
-export default function CardsSection() {
+export default function PinBackground() {
   useEffect(() => {
     gsap.fromTo(
       "#cards-section",
@@ -171,7 +171,7 @@ export default function CardsSection() {
                   "w-fit bg-violet-500 px-4 text-lg font-medium text-white"
                 )}
               >
-                Check On Github
+                Cool Right?
               </div>
             </div>
 
