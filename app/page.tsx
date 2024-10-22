@@ -1,6 +1,6 @@
 import AwwardSection from "./sections/AwwardSection"
+import BioSection from "./sections/BioSection"
 import CardsSection from "./sections/CardsSection"
-import ContactSection from "./sections/ContactSection"
 import HeroSection from "./sections/HeroSection"
 import ImagesSection from "./sections/ImagesSection"
 import PinSection from "./sections/PinSection"
@@ -18,8 +18,8 @@ export default function Home() {
       <SpaceSection />
       <SliderSection />
       <StatueSection />
+      <BioSection />
       <ImagesSection />
-      <ContactSection />
     </div>
   )
 }

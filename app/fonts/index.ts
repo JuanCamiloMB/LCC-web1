@@ -1,4 +1,4 @@
-import { Afacad, Agdasima, EB_Garamond, Syne } from "next/font/google"
+import { Afacad, Agdasima, EB_Garamond, Poppins, Syne } from "next/font/google"
 import localFont from "next/font/local"
 
 export const geistSans = localFont({
@@ -31,6 +31,12 @@ export const reckoner = localFont({
 export const Ebgramond = EB_Garamond({
   subsets: ["latin"],
   display: "swap",
+})
+
+export const PoppinFont = Poppins({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["500", "600", "700", "800"],
 })
 
 export const SyneFont = Syne({
