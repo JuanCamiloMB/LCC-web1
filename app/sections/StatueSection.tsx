@@ -1,10 +1,10 @@
 "use client"
 
 import { useEffect } from "react"
-import RobotStatue from "@/app/assets/freepik-export-20241021055021nyHF.png"
-import RobotStatueBg from "@/app/assets/futuristic-female-robot-background.jpg"
 import SmallRobotStatueBg from "@/app/assets/robot-statue-bg-small.jpg"
+import RobotStatueBg from "@/app/assets/robot-statue-bg.jpg"
 import SmallRobotStatue from "@/app/assets/robot-statue-small.png"
+import RobotStatue from "@/app/assets/robot-statue.png"
 import { cn } from "@/lib/utils"
 import gsap from "gsap"
 import Image from "next/image"
