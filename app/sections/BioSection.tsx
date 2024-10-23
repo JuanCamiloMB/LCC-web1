@@ -94,13 +94,13 @@ export default function BioSection() {
   return (
     <section
       id="bio-section-container"
-      className="relative z-10 h-screen w-full bg-white"
+      className="relative z-10 h-screen w-screen bg-white"
     >
       <div className="bio-section h-full w-full origin-center bg-black p-5">
         <div
           className={cn(
             PoppinFont.className,
-            "flex h-full w-full items-center"
+            "flex h-full w-full flex-col items-center gap-16 lg:flex-row"
           )}
         >
           <div className="relative flex h-full flex-1 flex-col items-center justify-center">
@@ -111,14 +111,16 @@ export default function BioSection() {
               <div className="text-xs tracking-widest text-white">Project</div>
             </div>
 
-            <Image
-              alt="cover"
-              src={Cover}
-              className="bio-image mx-auto w-3/4 rounded-md object-cover shadow-sm"
-            />
+            <div className="mt-10 w-full md:w-3/4 lg:mt-0">
+              <Image
+                alt="cover"
+                src={Cover}
+                className="bio-image mx-auto h-full rounded-md object-cover shadow-sm"
+              />
+            </div>
           </div>
 
-          <div className="relative flex h-full w-[40%] flex-col items-center justify-center pr-20">
+          <div className="relative flex h-full w-full flex-col items-center justify-center lg:w-[40%] lg:pr-20">
             <div className="absolute left-0 top-0 flex w-full items-center gap-28">
               <div className="text-xs font-semibold tracking-widest text-white">
                 0001/
@@ -126,11 +128,11 @@ export default function BioSection() {
               <div className="text-xs tracking-widest text-white">Project</div>
             </div>
 
-            <div className="flex flex-col items-start gap-10">
+            <div className="mt-10 flex w-full flex-col items-start gap-10 lg:mt-0">
               <div className="bio-text overflow-hidden text-4xl text-white">
                 We&apos;re building the future of home improvement, today.
               </div>
-              <div className="bio-text w-[80%] overflow-hidden text-white">
+              <div className="bio-text hidden w-full overflow-hidden text-white md:block lg:w-[80%]">
                 Emerging technologies like AI and spatial computing are
                 collapsing the distance between our physical and digital worlds.
                 Lowe&apos;s Innovation Labs is a multi-disciplinary team that
@@ -141,7 +143,7 @@ export default function BioSection() {
                 capabilities, and business opportunities that enable Lowe&apos;s
                 to better serve our customers.
               </div>
-              <button className="flex items-center gap-4 rounded-full bg-indigo-600 px-5 py-2">
+              <button className="hidden items-center gap-4 rounded-full bg-indigo-600 px-5 py-2 md:flex">
                 <div className="text-xs text-white">Areas of Exploration</div>
                 <ArrowRight className="text-white" size={14} />
               </button>
