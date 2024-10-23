@@ -131,6 +131,7 @@ export default function ImagesSection() {
             <div className="relative h-[400px] w-[22vw] overflow-hidden rounded-md bg-white">
               <Image
                 src={Image1}
+                priority
                 className="h-full w-full object-cover"
                 alt="card-1-image"
               />
@@ -139,6 +140,7 @@ export default function ImagesSection() {
             <div className="relative h-[400px] w-[22vw] overflow-hidden rounded-md bg-white">
               <Image
                 src={Image2}
+                priority
                 className="h-full w-full object-cover"
                 alt="card-2-image"
               />
@@ -147,6 +149,7 @@ export default function ImagesSection() {
             <div className="relative left-[4vw] mt-[-10vw] h-[400px] w-[20vw] overflow-hidden rounded-md bg-white">
               <Image
                 src={Image3}
+                priority
                 className="h-full w-full object-cover"
                 alt="card-3-image"
               />
@@ -155,6 +158,7 @@ export default function ImagesSection() {
             <div className="verflow-hidden relative left-[64vw] top-[-73.4vw] mt-[-45vw] h-[400px] w-[20vw] rounded-md bg-white">
               <Image
                 src={Image4}
+                priority
                 className="h-full w-full object-cover"
                 alt="card-4-image"
               />
@@ -163,6 +167,7 @@ export default function ImagesSection() {
             <div className="relative left-[58vw] mt-[-75vw] h-[400px] w-[22vw] overflow-hidden rounded-md bg-white">
               <Image
                 src={Image5}
+                priority
                 className="h-full w-full object-cover"
                 alt="card-5-image"
               />
@@ -171,6 +176,7 @@ export default function ImagesSection() {
             <div className="relative left-[64vw] mt-[-10vw] h-[400px] w-[20vw] overflow-hidden rounded-md bg-white">
               <Image
                 src={Image6}
+                priority
                 className="h-full w-full object-cover"
                 alt="card-6-image"
               />
@@ -189,6 +195,7 @@ export default function ImagesSection() {
             <div className="relative right-[60vw] top-[14vw] h-[400px] w-[18vw] overflow-hidden rounded-md bg-orange-500 text-white opacity-75">
               <Image
                 src={Image7}
+                priority
                 className="h-full w-full object-cover"
                 alt="card-7-image"
               />
@@ -197,6 +204,7 @@ export default function ImagesSection() {
             <div className="relative right-[58vw] mt-[5vw] h-[400px] w-[22vw] overflow-hidden rounded-md bg-orange-500 text-white opacity-75">
               <Image
                 src={Image8}
+                priority
                 className="h-full w-full object-cover"
                 alt="card-8-image"
               />
@@ -205,6 +213,7 @@ export default function ImagesSection() {
             <div className="relative right-[5vw] top-[-70vw] h-[400px] w-[20vw] overflow-hidden rounded-md bg-orange-500 text-white opacity-75">
               <Image
                 src={Image9}
+                priority
                 className="h-full w-full object-cover"
                 alt="card-9-image"
               />
@@ -213,6 +222,7 @@ export default function ImagesSection() {
             <div className="relative right-[15vw] top-[-80vw] h-[360px] w-[20vw] overflow-hidden rounded-md bg-orange-500 text-white opacity-75">
               <Image
                 src={Image10}
+                priority
                 className="h-full w-full object-cover"
                 alt="card-10-image"
               />

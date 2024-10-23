@@ -95,7 +95,7 @@ export default function HeroSection() {
     gsap.to(".hero-image", {
       scrollTrigger: {
         trigger: "#hero-section",
-        start: "30% bottom",
+        start: "30% top",
         end: "bottom top",
         scrub: true,
       },
@@ -158,27 +158,24 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section
-      id="hero-section"
-      className="relative h-screen w-full overflow-hidden"
-    >
+    <section id="hero-section" className="relative h-screen w-screen">
       <Image
         alt="cover-image"
         src={Cover}
         priority
         data-value={-4}
-        className="hero-image absolute -left-[30%] bottom-0 h-full object-contain"
+        className="hero-image absolute bottom-0 left-0 h-[600px] w-[500px] object-cover lg:-left-[30%] lg:h-full lg:w-full lg:object-contain"
       />
 
-      <div className="absolute left-[30%] top-[36%] w-full max-w-3xl">
-        <div className="hero-title text-[7.2rem] font-extrabold leading-[1] tracking-tighter text-white mix-blend-difference">
+      <div className="absolute left-1/2 top-[48%] w-fit max-w-3xl -translate-x-1/2 -translate-y-1/2 px-10 mix-blend-difference md:top-[50%] lg:left-[30%] lg:top-[36%] lg:translate-x-0 lg:translate-y-0">
+        <div className="hero-title text-[4.5rem] font-extrabold leading-[1] tracking-tighter text-white md:text-[5rem] lg:text-[7.2rem]">
           MOTION
         </div>
-        <div className="hero-title ml-[260px] text-[7.2rem] font-extrabold leading-[1] tracking-tighter text-white">
+        <div className="hero-title ml-[25%] text-[4.5rem] font-extrabold leading-[1] tracking-tighter text-white md:ml-[35%] md:text-[5rem] lg:text-[7.2rem]">
           SC
           <span className="title-stroke">AP</span>E
         </div>
-        <div className="hero-title ml-[130px] text-[7.2rem] font-extrabold leading-[1] tracking-tighter text-white">
+        <div className="hero-title ml-[10%] text-[4.5rem] font-extrabold leading-[1] tracking-tighter text-white md:ml-[20%] md:text-[5rem] lg:text-[7.2rem]">
           G<span className="title-stroke">SA</span>P
         </div>
       </div>
