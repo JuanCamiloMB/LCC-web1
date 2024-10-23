@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from "next"
 import ScreenLoader from "./components/ScreenLoader"
 import { geistMono, geistSans } from "./fonts"
@@ -21,6 +22,7 @@ export default function RootLayout({
       >
         <ScreenLoader />
         <Header />
+        <Analytics />
         {children}
       </body>
     </html>

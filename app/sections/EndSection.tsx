@@ -16,7 +16,7 @@ export default function EndSection() {
       id="end-section"
       className={cn(
         PoppinFont.className,
-        "relative z-10 h-[65vh] w-full bg-indigo-800"
+        "relative z-10 h-[65vh] w-screen bg-indigo-800"
       )}
     >
       <div className="flex h-full w-full flex-col justify-between px-2 pb-3 pt-[8%]">
