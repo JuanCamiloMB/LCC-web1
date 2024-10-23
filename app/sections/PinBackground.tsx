@@ -81,11 +81,11 @@ export default function PinBackground() {
       style={{
         transform: "50% 0%",
       }}
-      className="relative h-[220vh] w-full bg-black"
+      className="relative h-[300vh] w-screen bg-black md:h-[220vh]"
     >
       <div className="card-content flex h-full w-full flex-col items-start gap-20 p-4">
-        <div className="flex items-center gap-4">
-          <div className="flex flex-col">
+        <div className="flex w-full items-center gap-4">
+          <div className="flex w-full flex-col items-start">
             <p
               className={cn(
                 reckoner.className,
@@ -107,8 +107,8 @@ export default function PinBackground() {
           </div>
         </div>
 
-        <div className="flex w-full items-start justify-between">
-          <div className="flex items-start gap-10">
+        <div className="flex w-full flex-col items-center justify-between md:flex-row md:items-start">
+          <div className="flex w-full items-start gap-10">
             <div
               className={cn(
                 reckoner.className,
@@ -118,12 +118,12 @@ export default function PinBackground() {
               website is the window of your business. Keep it fresh, Great web
               design without functionality is like a sports car with no engine.
             </div>
-            <div className="flex flex-col items-start">
+            <div className="flex w-full flex-col items-start">
               <div
                 style={{
                   clipPath: "inset(0 0 0 0)",
                 }}
-                className="h-[400px] w-[200px]"
+                className="h-[400px] w-full lg:w-[200px]"
               >
                 <Image
                   className="card-section-image h-full w-full rounded-lg object-contain"
@@ -136,7 +136,7 @@ export default function PinBackground() {
                 style={{
                   clipPath: "inset(0 0 0 0)",
                 }}
-                className="h-[400px] w-[200px]"
+                className="h-[400px] w-full lg:w-[200px]"
               >
                 <Image
                   className="card-section-image h-full w-full rounded-lg object-contain"
@@ -147,8 +147,8 @@ export default function PinBackground() {
             </div>
           </div>
 
-          <div className="flex h-full flex-col justify-between pr-[2%]">
-            <div className="flex flex-col">
+          <div className="flex h-full w-full flex-col items-start justify-between gap-10 md:pr-[2%]">
+            <div className="flex w-full flex-col items-start gap-4">
               <div
                 className={cn(
                   reckoner.className,
@@ -178,7 +178,7 @@ export default function PinBackground() {
             <div
               className={cn(
                 reckoner.className,
-                "w-[500px] text-xl tracking-widest text-white"
+                "text-xl tracking-widest text-white lg:w-[500px]"
               )}
             >
               Inspired by award-winning designs from Awwwards, it combines fluid
@@ -187,7 +187,7 @@ export default function PinBackground() {
               to detail, enhancing the overall aesthetic and user experience.
             </div>
 
-            <div className="flex items-center justify-between">
+            <div className="flex w-full items-center justify-between">
               <div
                 className={cn(
                   reckoner.className,
