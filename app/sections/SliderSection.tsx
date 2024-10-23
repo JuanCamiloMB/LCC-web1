@@ -185,9 +185,9 @@ export default function SliderSection() {
       >
         <div
           id="slider-cards-section"
-          className="absolute top-0 z-[2] flex h-full w-full flex-col items-start gap-[6%] p-10"
+          className="absolute top-0 z-[2] flex h-full w-full flex-col items-start gap-[6%] px-5 py-32 md:gap-[15%] md:px-10 md:py-10 lg:gap-[6%]"
         >
-          <div className="absolute bottom-4 right-4">
+          <div className="absolute bottom-10 right-2 md:bottom-4 md:right-4">
             <ScrollSvg />
           </div>
 
@@ -195,7 +195,7 @@ export default function SliderSection() {
             <div
               className={cn(
                 reckoner.className,
-                "slider-title text-9xl font-bold leading-[0.7]"
+                "slider-title text-8xl font-bold leading-[0.7] lg:text-9xl"
               )}
             >
               Motion.
@@ -253,7 +253,7 @@ export default function SliderSection() {
           <div
             className={cn(
               AfacadFont.className,
-              "absolute bottom-4 left-10 flex items-center gap-24"
+              "absolute bottom-4 left-4 flex items-center gap-24 md:left-10"
             )}
           >
             <div className="bullet-title text-xs font-semibold tracking-tight">
@@ -268,7 +268,7 @@ export default function SliderSection() {
           </div>
         </div>
 
-        <div className="grid-section absolute top-0 z-[1] grid h-full w-full grid-cols-12 grid-rows-8 opacity-0">
+        <div className="grid-section absolute top-0 z-[1] grid h-full w-full grid-cols-4 grid-rows-8 opacity-0 md:grid-cols-6 lg:grid-cols-12">
           {[...new Array(100)].map((_, index) => (
             <div
               key={index}
@@ -315,7 +315,7 @@ const cards = [
 
 const ScrollSvg = () => {
   return (
-    <div className="relative h-[130px] w-[130px]">
+    <div className="relative h-[100px] w-[100px] md:h-[130px] md:w-[130px]">
       <svg
         width="192"
         height="192"

@@ -84,7 +84,7 @@ export default function PinSection() {
           aspectRatio: 1,
           clipPath: "polygon(50% 0,79% 90%,2% 35%,98% 35%,21% 90%)",
         }}
-        className="revealer absolute left-[35%] mt-[300px] w-[80px] -translate-x-[50%] bg-white md:left-[60%] md:w-[140px] lg:left-[35%] lg:w-[160px]"
+        className="revealer absolute left-[35%] mt-[300px] w-[80px] -translate-x-[50%] bg-white md:left-[35%] md:w-[140px] lg:w-[160px]"
       />
     </section>
   )
