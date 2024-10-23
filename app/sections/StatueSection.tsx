@@ -3,6 +3,8 @@
 import { useEffect } from "react"
 import RobotStatue from "@/app/assets/freepik-export-20241021055021nyHF.png"
 import RobotStatueBg from "@/app/assets/futuristic-female-robot-background.jpg"
+import SmallRobotStatueBg from "@/app/assets/robot-statue-bg-small.jpg"
+import SmallRobotStatue from "@/app/assets/robot-statue-small.png"
 import { cn } from "@/lib/utils"
 import gsap from "gsap"
 import Image from "next/image"
@@ -42,7 +44,7 @@ export default function StatueSection() {
     gsap.to("#statue-text-section", {
       scrollTrigger: {
         trigger: "#statue-section",
-        start: "60% bottom",
+        start: "80% bottom",
         endTrigger: "#statue-section",
         end: "bottom top",
         scrub: true,
@@ -133,12 +135,12 @@ export default function StatueSection() {
     <>
       <section
         id="statue-text-section"
-        className="absolute left-0 top-[780vh] z-30 h-screen w-full p-5"
+        className="absolute left-0 z-30 h-screen w-screen p-5"
       >
         <div
           className={cn(
             reckoner.className,
-            "statue-text h-screen w-screen text-[200px] font-extrabold leading-[1] tracking-wider text-white"
+            "statue-text h-screen w-fit text-nowrap pt-24 text-7xl font-extrabold leading-[1] tracking-wider text-white md:text-[200px]"
           )}
         >
           LIVE WITH YR DREAM
@@ -147,12 +149,12 @@ export default function StatueSection() {
 
       <section
         id="statue-description-section"
-        className="absolute left-0 top-[780vh] z-[41] h-screen w-full"
+        className="absolute left-0 z-[41] h-screen w-screen"
       >
         <div
           className={cn(
             reckoner.className,
-            "statue-description absolute left-1/2 top-1/2 w-fit -translate-x-1/2 -translate-y-1/2 overflow-hidden text-4xl tracking-wide text-white"
+            "statue-description absolute left-1/2 top-1/2 m-auto w-[65%] -translate-x-1/2 -translate-y-1/2 overflow-hidden text-4xl tracking-wide text-white md:w-fit"
           )}
         >
           LIVE WITH YOUR DREAM
@@ -161,25 +163,38 @@ export default function StatueSection() {
 
       <section
         id="statue-section"
-        className="relative z-20 h-[420vh] w-full px-5 text-9xl text-white opacity-0"
+        className="relative z-20 h-[100vh] w-screen bg-black px-5 text-9xl text-white opacity-0 lg:h-[310vh]"
       >
         <Image
           priority
           alt="robot-statue"
-          className="absolute left-0 top-0 h-full w-full object-cover"
+          className="absolute left-0 top-0 hidden h-full w-full object-contain lg:block"
           src={RobotStatueBg}
+        />
+
+        <Image
+          priority
+          alt="robot-statue-small"
+          className="absolute left-0 top-0 block h-full w-full object-fill lg:hidden"
+          src={SmallRobotStatueBg}
         />
       </section>
 
       <section
         id="statue-robot-section"
-        className="absolute left-0 top-[780vh] z-40 h-[420vh] w-full opacity-0"
+        className="absolute left-0 top-[880vh] z-40 h-[100vh] w-full opacity-0 md:top-[800vh] lg:h-[310vh]"
       >
         <Image
           priority
           alt="robot-statue"
-          className="absolute left-0 top-0 h-full w-full object-cover"
+          className="absolute left-0 top-0 hidden h-full w-screen object-contain lg:block"
           src={RobotStatue}
+        />
+        <Image
+          priority
+          alt="robot-statue"
+          className="absolute left-0 top-0 block h-full w-full object-fill lg:hidden"
+          src={SmallRobotStatue}
         />
       </section>
     </>
