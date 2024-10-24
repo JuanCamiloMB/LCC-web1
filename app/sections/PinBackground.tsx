@@ -13,20 +13,21 @@ export default function PinBackground() {
     gsap.fromTo(
       "#cards-section",
       {
-        scale: 0.1,
+        scale: 0.5,
         rotate: 20,
       },
       {
         scrollTrigger: {
-          trigger: "#hero-section",
-          start: "top top",
-          endTrigger: "#cards-section",
-          end: "center bottom",
+          trigger: "#cards-section",
+          start: "top bottom",
+          end: "40% bottom",
+
           scrub: true,
         },
+        duration: 50,
         scale: 1,
         rotate: 0,
-        ease: "power1.out",
+        ease: "none",
       }
     )
 

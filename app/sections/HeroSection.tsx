@@ -85,29 +85,29 @@ export default function HeroSection() {
       scrollTrigger: {
         trigger: "#hero-section",
         start: "top top",
+        endTrigger: "#cards-section",
         end: "bottom top",
-        scrub: true,
+        pin: true,
+        pinSpacing: false,
       },
-      yPercent: 100,
-      ease: "none",
     })
 
     gsap.to(".hero-image", {
       scrollTrigger: {
-        trigger: "#hero-section",
-        start: "30% top",
+        trigger: "#cards-section",
+        start: "5% bottom",
         end: "bottom top",
         scrub: true,
       },
       ease: "none",
-      xPercent: -14,
+      xPercent: -34,
     })
 
     gsap.to(".hero-title", {
       scrollTrigger: {
-        trigger: "#hero-section",
-        start: "30% bottom",
-        end: "bottom top",
+        trigger: "#cards-section",
+        start: "10% bottom",
+        end: "70% bottom",
         scrub: true,
       },
       ease: "none",
@@ -116,9 +116,9 @@ export default function HeroSection() {
 
     gsap.to(".bar-section", {
       scrollTrigger: {
-        trigger: "#hero-section",
-        start: "20% top",
-        end: "bottom top",
+        trigger: "#cards-section",
+        start: "10% bottom",
+        end: "70% bottom",
         scrub: true,
       },
       ease: "power1.inOut",
@@ -167,7 +167,7 @@ export default function HeroSection() {
         className="hero-image absolute bottom-0 left-0 h-[600px] w-[500px] object-cover lg:-left-[30%] lg:h-full lg:w-full lg:object-contain"
       />
 
-      <div className="absolute left-1/2 top-[48%] w-fit max-w-3xl -translate-x-1/2 -translate-y-1/2 px-10 mix-blend-difference md:top-[50%] lg:left-[30%] lg:top-[36%] lg:translate-x-0 lg:translate-y-0">
+      <div className="absolute left-1/2 top-[48%] w-fit max-w-3xl -translate-x-1/2 -translate-y-1/2 px-10 mix-blend-difference md:top-[50%] lg:left-[30%] lg:top-[26%] lg:translate-x-0 lg:translate-y-0">
         <div className="hero-title text-[4.5rem] font-extrabold leading-[1] tracking-tighter text-white md:text-[5rem] lg:text-[7.2rem]">
           MOTION
         </div>
