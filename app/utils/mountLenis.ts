@@ -25,4 +25,6 @@ export default function mountLenis() {
       lenis.destroy()
     }
   }, [])
+
+  return null
 }

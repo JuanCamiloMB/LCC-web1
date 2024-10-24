@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
-import Cover from "@/app/assets/bg-2.png"
+import Cover from "@/app/assets/bg-2-hd.png"
 import Star from "@/app/assets/star.svg"
 import { cn } from "@/lib/utils"
 import gsap from "gsap"
