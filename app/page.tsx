@@ -2,7 +2,7 @@ import BioSection from "./sections/BioSection"
 import EndSection from "./sections/EndSection"
 import FixedSection from "./sections/FixedSection"
 import HeroSection from "./sections/HeroSection"
-import ImagesSection from "./sections/ImagesSection"
+// import ImagesSection from "./sections/ImagesSection"
 import PinBackground from "./sections/PinBackground"
 import PinSection from "./sections/PinSection"
 import SliderSection from "./sections/SliderSection"
@@ -20,7 +20,7 @@ export default function Home() {
       <SliderSection />
       <StatueSection />
       <BioSection />
-      <ImagesSection />
+      {/* <ImagesSection /> */}
       <EndSection />
     </div>
   )
