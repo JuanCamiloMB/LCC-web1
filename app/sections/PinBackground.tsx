@@ -1,214 +1,293 @@
 "use client"
 
 import { useEffect } from "react"
-import Robot1 from "@/app/assets/robots/robot-6.jpg"
-import Robot2 from "@/app/assets/robots/robot-7.jpg"
 import { cn } from "@/lib/utils"
 import gsap from "gsap"
-import Image from "next/image"
-import { reckoner } from "../fonts"
+import ScrollTrigger from "gsap/dist/ScrollTrigger"
+import SplitType from "split-type"
+import { SchibstedFont } from "../fonts"
 
 export default function PinBackground() {
   useEffect(() => {
-    gsap.fromTo(
-      "#cards-section",
-      {
-        scale: 0.5,
-        rotate: 20,
-      },
-      {
-        scrollTrigger: {
-          trigger: "#cards-section",
-          start: "top bottom",
-          end: "40% bottom",
+    const pinBgDescription = new SplitType(".pin-bg-description", {
+      types: "lines",
+      tagName: "span",
+      lineClass: "-translate-y-[100%]",
+    })
 
-          scrub: true,
-        },
-        duration: 50,
-        scale: 1,
-        rotate: 0,
-        ease: "none",
+    const pinBgDescription2 = new SplitType(".pin-bg-description-2", {
+      types: "lines",
+      tagName: "span",
+      lineClass: "-translate-y-[100%]",
+    })
+
+    if (!pinBgDescription || !pinBgDescription2) return
+    ;[...pinBgDescription.lines!, ...pinBgDescription2.lines!]?.forEach(
+      (line) => {
+        const wrapper = document.createElement("div")
+        wrapper.classList.add("overflow-hidden")
+        line.parentNode?.insertBefore(wrapper, line)
+        wrapper.appendChild(line)
       }
     )
 
-    gsap.to(".awward-name", {
+    gsap.to(".pin-bg-text", {
       scrollTrigger: {
-        trigger: "#hero-section",
-        start: "top top",
-        endTrigger: "#cards-section",
-        end: "center bottom",
+        trigger: "#pin-content-section-1",
+        start: "74% bottom",
+        end: "bottom bottom",
         scrub: true,
-      },
-      background: "white",
-    })
+        onEnter: () => {
+          gsap.to(".pin-bg-text", {
+            yPercent: 100,
+          })
 
-    gsap.to(".awward-text", {
-      scrollTrigger: {
-        trigger: "#hero-section",
-        start: "top top",
-        endTrigger: "#cards-section",
-        end: "center bottom",
-        scrub: true,
-      },
-      color: "black",
-    })
+          const tl = gsap.timeline({
+            defaults: {
+              stagger: 0.05,
+            },
+          })
+          tl.to(".pin-bg-description span", {
+            yPercent: 100,
+          })
 
-    gsap.to(".awward-text", {
-      scrollTrigger: {
-        trigger: "#hero-section",
-        start: "top top",
-        endTrigger: "#cards-section",
-        end: "center bottom",
-        scrub: true,
-      },
-      color: "black",
-    })
+          const tl2 = gsap.timeline({
+            defaults: {
+              stagger: 0.05,
+            },
+          })
+          tl2.to(".pin-bg-description-2 span", {
+            yPercent: 100,
+          })
+        },
+        onLeaveBack: () => {
+          gsap.to(".pin-bg-text", {
+            yPercent: -100,
+          })
 
-    gsap.to(".card-section-image", {
-      scrollTrigger: {
-        trigger: ".pinned",
-        start: "top top",
-        endTrigger: "#space-section",
-        end: "top bottom",
-        scrub: true,
+          const tl = gsap.timeline({
+            defaults: {
+              stagger: 0.05,
+            },
+          })
+          tl.to(".pin-bg-description span", {
+            yPercent: -100,
+          })
+
+          const tl2 = gsap.timeline({
+            defaults: {
+              stagger: 0.05,
+            },
+          })
+          tl2.to(".pin-bg-description-2 span", {
+            yPercent: -100,
+          })
+        },
       },
-      scale: 1.2,
+    })
+  }, [])
+
+  /* Last Section */
+  useEffect(() => {
+    gsap.to("#pin-content-section-2", {
+      scrollTrigger: {
+        trigger: "#pin-content-section-2",
+        start: "top top",
+        end: "bottom top",
+
+        onEnter: () => {
+          gsap.to("#pin-content-section-2", {
+            background: "#4338ca",
+            // background: "#3730a3",
+          })
+        },
+        onLeaveBack: () => {
+          gsap.to("#pin-content-section-2", {
+            background: "#000000",
+          })
+        },
+      },
+    })
+  }, [])
+
+  /* Last Section Text Animation */
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: "#pin-content-section-2",
+      start: "80% bottom",
+      end: "bottom top",
+      scrub: true,
+      onEnter: () => {
+        gsap.to(".last-text", {
+          yPercent: 100,
+        })
+      },
+      onLeaveBack: () => {
+        gsap.to(".last-text", {
+          yPercent: 0,
+        })
+      },
     })
   }, [])
 
   return (
-    <section
-      id="cards-section"
-      style={{
-        transform: "50% 0%",
-      }}
-      className="relative h-[300vh] w-screen bg-black md:h-[220vh]"
-    >
-      <div className="card-content flex h-full w-full flex-col items-start gap-20 p-4">
-        <div className="flex w-full items-center gap-4">
-          <div className="flex w-full flex-col items-start">
-            <p
-              className={cn(
-                reckoner.className,
-                "text-9xl font-bold leading-[1] tracking-wide text-indigo-400"
-              )}
-            >
-              DESIGN <span className="title-stroke">MAT</span>TERS
-              <span className="title-stroke">.</span>
-            </p>
-            <p
-              className={cn(
-                reckoner.className,
-                "text-lg font-medium tracking-tight text-gray-400"
-              )}
-            >
-              design is not just what it looks like and feels like. design is
-              how it works.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex w-full flex-col items-center justify-between md:flex-row md:items-start">
-          <div className="flex w-full items-start gap-10">
-            <div
-              className={cn(
-                reckoner.className,
-                "text-4xl font-semibold text-gray-400 [writing-mode:vertical-lr]"
-              )}
-            >
-              website is the window of your business. Keep it fresh, Great web
-              design without functionality is like a sports car with no engine.
+    <>
+      <section
+        id="pin-content-section-1"
+        className={cn(
+          SchibstedFont.className,
+          "relative z-10 flex h-[200vh] w-screen items-center bg-black px-[4%]"
+        )}
+      >
+        <div className="mt-[50%] flex w-full items-start justify-between">
+          <div className="flex w-[30%] flex-col gap-6">
+            <div className="flex flex-col gap-1">
+              <div className="overflow-hidden">
+                <div className="pin-bg-text -translate-y-[100%] text-5xl font-medium leading-[1] tracking-wider text-white">
+                  EXPLORE
+                </div>
+              </div>
+              <div className="overflow-hidden">
+                <div className="pin-bg-text -translate-y-[100%] text-5xl font-medium leading-[1] text-indigo-400">
+                  INDEX
+                </div>
+              </div>
             </div>
-            <div className="flex w-full flex-col items-start">
-              <div
-                style={{
-                  clipPath: "inset(0 0 0 0)",
-                }}
-                className="h-[400px] w-full lg:w-[200px]"
-              >
-                <Image
-                  className="card-section-image h-full w-full rounded-lg object-contain"
-                  src={Robot1}
-                  alt="robot-1"
-                />
-              </div>
 
-              <div
-                style={{
-                  clipPath: "inset(0 0 0 0)",
-                }}
-                className="h-[400px] w-full lg:w-[200px]"
-              >
-                <Image
-                  className="card-section-image h-full w-full rounded-lg object-contain"
-                  src={Robot2}
-                  alt="robot-2"
-                />
-              </div>
+            <div className="pin-bg-description text-sm font-normal leading-[1.5] tracking-tight text-white">
+              Step into a space where creativity meets technology, and
+              innovation comes to life. Whether you&apos;re here to explore my
+              journey as a developer, discover the projects I&apos;ve crafted,
+              or connect with my thoughts on the latest trends, there&apos;s
+              something for everyone.
             </div>
           </div>
-
-          <div className="flex h-full w-full flex-col items-start justify-between gap-10 md:pr-[2%]">
-            <div className="flex w-full flex-col items-start gap-4">
-              <div
-                className={cn(
-                  reckoner.className,
-                  "text-lg font-medium text-gray-400"
-                )}
-              >
-                By <span className="text-white">Shin</span> Thant.
-              </div>
-              <div
-                className={cn(
-                  reckoner.className,
-                  "text-[88px] font-extrabold leading-[1] text-white"
-                )}
-              >
-                FIRST RELEASE
-              </div>
-              <div
-                className={cn(
-                  reckoner.className,
-                  "w-fit bg-violet-500 px-4 text-lg font-medium text-white"
-                )}
-              >
-                Cool Right?
+          <div className="flex w-[30%] flex-col gap-6 pr-[2%]">
+            <div className="overflow-hidden">
+              <div className="pin-bg-text -translate-y-[100%] text-5xl font-medium tracking-wider text-white">
+                ABOUT ME
               </div>
             </div>
-
-            <div
-              className={cn(
-                reckoner.className,
-                "text-xl tracking-widest text-white lg:w-[500px]"
-              )}
-            >
-              Inspired by award-winning designs from Awwwards, it combines fluid
-              motion and creative interactions to create an engaging user
-              journey. Each page transition is crafted with meticulous attention
-              to detail, enhancing the overall aesthetic and user experience.
+            <div className="pin-bg-description-2 text-sm font-normal leading-[1.5] tracking-tight text-white">
+              Dive into the story behind the code: my passion for technology,
+              the skills I&apos;ve honed, and the experiences that have shaped
+              my career. Discover my latest blog posts, tutorials, and insights.
+              Whether it&apos;s solving tricky technical challenges or sharing
+              industry trends, I love contributing to the developer community.
             </div>
-
-            <div className="flex w-full items-center justify-between">
-              <div
-                className={cn(
-                  reckoner.className,
-                  "text-7xl font-bold italic text-indigo-400"
-                )}
-              >
-                Version.
-              </div>
-              <div
-                className={cn(
-                  reckoner.className,
-                  "text-8xl font-bold text-white"
-                )}
-              >
-                O.1
+            <div className="overflow-hidden">
+              <div className="pin-bg-text -translate-y-[100%] text-sm font-medium uppercase tracking-tight text-indigo-300">
+                keep scroll
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+
+        <div className="absolute bottom-4 flex w-full items-center gap-[30%] px-[4%]">
+          <div className="flex w-full items-center justify-between">
+            <div className="text-xs font-semibold tracking-tight text-white">
+              Design.
+            </div>
+            <div className="text-xs font-semibold tracking-tight text-white">
+              UI/UX.
+            </div>
+          </div>
+          <div className="flex w-full items-center justify-between">
+            <div className="text-xs font-semibold tracking-tight text-white">
+              Animations.
+            </div>
+            <div className="text-xs font-semibold tracking-tight text-white">
+              Transitions.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="pin-content-section-2"
+        className="relative z-10 h-[200vh] w-screen bg-black px-4"
+      >
+        <div className="flex flex-col gap-10 pt-[60%]">
+          <div className="flex items-end justify-start gap-8">
+            <div className="overflow-hidden">
+              <div className="last-text w-[60%] -translate-y-[100%] text-[200px] font-bold leading-[1] text-white">
+                VISHION
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <div className="overflow-hidden">
+                <div className="last-text w-fit -translate-y-[100%] rounded-full border px-3 py-[6px] text-[12px] uppercase leading-[1] tracking-tight text-white">
+                  Strategy
+                </div>
+              </div>
+
+              <div className="overflow-hidden">
+                <div className="last-text w-fit -translate-y-[100%] rounded-full border px-3 py-[6px] text-[12px] uppercase leading-[1] tracking-tight text-white">
+                  Artistic Direction
+                </div>
+              </div>
+
+              <div className="overflow-hidden">
+                <div className="last-text w-fit -translate-y-[100%] rounded-full border px-3 py-[6px] text-[12px] uppercase leading-[1] tracking-tight text-white">
+                  Methodology
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-row-reverse items-end justify-start gap-8">
+            <div className="overflow-hidden">
+              <div className="last-text -translate-y-[100%] text-[200px] font-bold leading-[1] text-white">
+                CRAFT
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <div className="overflow-hidden">
+                <div className="last-text w-fit -translate-y-[100%] rounded-full border px-3 py-[6px] text-[12px] uppercase leading-[1] tracking-tight text-white">
+                  Strategy
+                </div>
+              </div>
+              <div className="overflow-hidden">
+                <div className="last-text w-fit -translate-y-[100%] rounded-full border px-3 py-[6px] text-[12px] uppercase leading-[1] tracking-tight text-white">
+                  Artistic Direction
+                </div>
+              </div>
+              <div className="overflow-hidden">
+                <div className="last-text w-fit -translate-y-[100%] rounded-full border px-3 py-[6px] text-[12px] uppercase leading-[1] tracking-tight text-white">
+                  Methodology
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-end justify-start gap-8">
+            <div className="overflow-hidden">
+              <div className="last-text -translate-y-[100%] text-[200px] font-bold leading-[1] text-white">
+                TECH
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <div className="overflow-hidden">
+                <div className="last-text w-fit -translate-y-[100%] rounded-full border px-3 py-[6px] text-[12px] uppercase leading-[1] tracking-tight text-white">
+                  Fullstack development
+                </div>
+              </div>
+              <div className="overflow-hidden">
+                <div className="last-text w-fit -translate-y-[100%] rounded-full border px-3 py-[6px] text-[12px] uppercase leading-[1] tracking-tight text-white">
+                  Creative coding
+                </div>
+              </div>
+              <div className="overflow-hidden">
+                <div className="last-text w-fit -translate-y-[100%] rounded-full border px-3 py-[6px] text-[12px] uppercase leading-[1] tracking-tight text-white">
+                  cms
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }

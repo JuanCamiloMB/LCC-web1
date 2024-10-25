@@ -181,7 +181,7 @@ export default function SliderSection() {
     <>
       <section
         id="slider-section"
-        className="relative z-10 h-screen w-screen overflow-hidden bg-white"
+        className="relative z-20 h-screen w-screen overflow-hidden bg-white"
       >
         <div
           id="slider-cards-section"

@@ -26,7 +26,7 @@ export default function ImagesSection() {
       scrollTrigger: {
         trigger: "#images-section-container",
         start: "top top",
-        end: "bottom top",
+        end: "bottom bottom",
 
         onLeaveBack: () => {
           gsap.to(".images-section", {
@@ -86,7 +86,7 @@ export default function ImagesSection() {
   return (
     <section
       id="images-section-container"
-      className="relative z-10 h-[400vh] w-screen bg-white"
+      className="relative z-20 h-[400vh] w-screen bg-white"
     >
       <div className="images-section sticky left-0 top-0 h-screen origin-center scale-50 overflow-hidden bg-black">
         {/* Hero Content */}

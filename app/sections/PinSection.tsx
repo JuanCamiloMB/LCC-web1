@@ -1,9 +1,19 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { cn } from "@/lib/utils"
 import gsap from "gsap"
 
+const images = [
+  "https://media1.tenor.com/m/FDTJutYHbe4AAAAC/src-src-nft.gif",
+  "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWY1NnF3bWFraW5peXBocWl5c2tocDBjNXFldWIzM2J1c2ZrdG9oOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6hu26DVZ0Hvk4IXkIN/giphy.webp",
+  "https://media1.tenor.com/m/1lRrrfpbzFcAAAAd/robot-chase.gif",
+]
+
 export default function PinSection() {
+  const [activeImageIndex, setActiveImageIndex] = useState(0)
+
+  /* Box Scroll Animation */
   useEffect(() => {
     gsap.to(".pinned", {
       scrollTrigger: {
@@ -16,59 +26,58 @@ export default function PinSection() {
       },
     })
 
-    gsap.to(".pinned", {
+    gsap.to(".pin-box", {
       scrollTrigger: {
-        trigger: ".pinned",
-        start: "top top",
-        endTrigger: "#space-section",
-        end: "top bottom",
-        onUpdate: (self) => {
-          const rotation = self.progress * 360
-          gsap.to(".revealer", { rotation })
-        },
-      },
-    })
-
-    gsap.to("#cards-section", {
-      scrollTrigger: {
-        trigger: "#cards-section",
-        start: "bottom bottom",
-        endTrigger: "#space-section",
-        end: "bottom top",
-        pin: true,
-        pinSpacing: false,
-      },
-    })
-
-    gsap.to(".pinned", {
-      scrollTrigger: {
-        trigger: "#cards-section",
-        start: "bottom bottom",
-        endTrigger: "#space-section",
-        end: "40% bottom",
+        trigger: "#pin-content-section-1",
+        start: "40% bottom",
+        end: "top top",
         scrub: true,
-        onUpdate: (self) => {
-          const progress = self.progress
-          const left = 35 + 15 * progress
-          gsap.to(".revealer", {
-            left: `${left}%`,
-            ease: "none",
-            duration: 0,
+        onEnter: () => {
+          gsap.to(".pin-box", {
+            width: 290,
+            height: 380,
+          })
+        },
+        onLeaveBack: () => {
+          gsap.to(".pin-box", {
+            width: 300,
+            height: 260,
           })
         },
       },
     })
 
-    gsap.to(".revealer", {
+    gsap.to(".pin-box", {
       scrollTrigger: {
-        trigger: "#space-section",
-        start: "top center",
+        trigger: "#pin-content-section-2",
+        start: "50% bottom",
         end: "bottom bottom",
         scrub: true,
-        onUpdate: (self) => {
-          const scale = 1 + 30 * self.progress
+        onEnter: () => {
+          gsap.to(".pin-box", {
+            width: 380,
+            height: 250,
+          })
+        },
+        onLeaveBack: () => {
+          gsap.to(".pin-box", {
+            width: 290,
+            height: 380,
+          })
+        },
+      },
+    })
 
-          gsap.to(".revealer", {
+    gsap.to(".pin-box", {
+      scrollTrigger: {
+        trigger: "#space-section",
+        start: "55% bottom",
+        end: "bottom top",
+        scrub: true,
+        onUpdate: (self) => {
+          const scale = 1 + 10 * self.progress
+
+          gsap.to(".pin-box", {
             scale,
             ease: "power1.out",
           })
@@ -77,15 +86,183 @@ export default function PinSection() {
     })
   }, [])
 
+  /* Gif Scroll Animation */
+  useEffect(() => {
+    /* Hide Gif 1 */
+    gsap.to(".pin-gif-wrapper", {
+      scrollTrigger: {
+        trigger: "#pin-content-section-1",
+        start: "10% bottom",
+        end: "bottom top",
+        scrub: true,
+        onEnter: () => {
+          gsap.to(".pin-gif-wrapper", {
+            clipPath: "inset(0% 0% 100%)",
+          })
+          gsap.to(".pin-initial-text", {
+            yPercent: -100,
+          })
+
+          const tl = gsap.timeline({
+            defaults: {
+              stagger: 0.1,
+            },
+          })
+          tl.to(".pin-initial-description span", {
+            yPercent: -100,
+          })
+
+          const tl2 = gsap.timeline({
+            defaults: {
+              stagger: 0.1,
+            },
+          })
+          tl2.to(".pin-initial-description-2 span", {
+            yPercent: -100,
+          })
+        },
+        onLeaveBack: () => {
+          gsap.to(".pin-gif-wrapper", {
+            clipPath: "inset(0% 0% 0%)",
+          })
+          gsap.to(".pin-initial-text", {
+            yPercent: 0,
+          })
+
+          const tl = gsap.timeline({
+            defaults: {
+              stagger: 0.1,
+            },
+          })
+          tl.to(".pin-initial-description span", {
+            yPercent: 0,
+          })
+
+          const tl2 = gsap.timeline({
+            defaults: {
+              stagger: 0.1,
+            },
+          })
+          tl2.to(".pin-initial-description-2 span", {
+            yPercent: 0,
+          })
+        },
+      },
+    })
+
+    /* Show Gif 2 */
+    gsap.to(".pin-gif-wrapper", {
+      scrollTrigger: {
+        trigger: "#pin-content-section-1",
+        start: "75% bottom",
+        end: "bottom top",
+        scrub: true,
+        onEnter: () => {
+          setActiveImageIndex(1)
+          gsap.to(".pin-gif-wrapper", {
+            clipPath: "inset(0% 0% 0%)",
+          })
+        },
+        onLeaveBack: () => {
+          gsap.to(".pin-gif-wrapper", {
+            clipPath: "inset(0% 0% 100%)",
+          })
+          setActiveImageIndex(0)
+        },
+      },
+    })
+
+    /* Hide Gif 2 */
+    gsap.to(".pin-gif-wrapper", {
+      scrollTrigger: {
+        trigger: "#pin-content-section-2",
+        start: "20% bottom",
+        end: "bottom top",
+        scrub: true,
+        onEnter: () => {
+          gsap.to(".pin-gif-wrapper", {
+            clipPath: "inset(0% 0% 100%)",
+          })
+        },
+        onLeaveBack: () => {
+          gsap.to(".pin-gif-wrapper", {
+            clipPath: "inset(0% 0% 0%)",
+          })
+        },
+      },
+    })
+
+    /*  Show Gif 3  */
+    gsap.to(".pin-gif-wrapper", {
+      scrollTrigger: {
+        trigger: "#pin-content-section-2",
+        start: "80% bottom",
+        end: "bottom top",
+        scrub: true,
+
+        onEnter: () => {
+          setActiveImageIndex(2)
+          gsap.to(".pin-gif-wrapper", {
+            clipPath: "inset(0% 0% 0%)",
+          })
+        },
+        onLeaveBack: () => {
+          gsap.to(".pin-gif-wrapper", {
+            clipPath: "inset(0% 0% 100%)",
+          })
+          setActiveImageIndex(1)
+        },
+      },
+    })
+
+    /* End */
+    gsap.to(".pin-gif-wrapper", {
+      scrollTrigger: {
+        trigger: "#space-section",
+        start: "30% bottom",
+        end: "bottom top",
+        scrub: true,
+        onEnter: () => {
+          gsap.to(".pin-gif-wrapper", {
+            clipPath: "inset(0% 0% 100%)",
+          })
+        },
+        onLeaveBack: () => {
+          gsap.to(".pin-gif-wrapper", {
+            clipPath: "inset(0% 0% 0%)",
+          })
+        },
+      },
+    })
+  }, [])
+
   return (
-    <section className="pinned absolute top-[120vh] z-[2] h-screen w-screen md:top-[100vh]">
-      <div
-        style={{
-          aspectRatio: 1,
-          clipPath: "polygon(50% 0,79% 90%,2% 35%,98% 35%,21% 90%)",
-        }}
-        className="revealer absolute left-[35%] mt-[300px] w-[80px] -translate-x-[50%] bg-white md:left-[35%] md:w-[140px] lg:w-[160px]"
-      />
+    <section className="pinned absolute top-[120vh] z-20 h-screen w-screen md:top-[100vh]">
+      <div className="pin-box absolute left-1/2 top-1/2 h-[260px] w-[300px] -translate-x-1/2 -translate-y-1/2 scale-100 border-[1px] border-white bg-white shadow-md">
+        <div className="pin-gif-wrapper h-full w-full">
+          <img
+            alt="pin-gif-1"
+            className={cn("pin-gif-1 h-full w-full", {
+              hidden: activeImageIndex !== 0,
+            })}
+            src={images[0]}
+          />
+          <img
+            alt="pin-gif-2"
+            className={cn("pin-gif-2 h-full w-full", {
+              hidden: activeImageIndex !== 1,
+            })}
+            src={images[1]}
+          />
+          <img
+            alt="pin-gif-3"
+            className={cn("pin-gif-3 h-full w-full", {
+              hidden: activeImageIndex !== 2,
+            })}
+            src={images[2]}
+          />
+        </div>
+      </div>
     </section>
   )
 }

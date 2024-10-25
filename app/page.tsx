@@ -1,27 +1,32 @@
-// import BioSection from "./sections/BioSection"
-// import EndSection from "./sections/EndSection"
+import BioSection from "./sections/BioSection"
+import EndSection from "./sections/EndSection"
 import FixedSection from "./sections/FixedSection"
 import HeroSection from "./sections/HeroSection"
-// import ImagesSection from "./sections/ImagesSection"
+import ImagesSection from "./sections/ImagesSection"
 import PinBackground from "./sections/PinBackground"
+import PinInitialSection from "./sections/PinInitialSection"
+import PinSection from "./sections/PinSection"
+import SliderSection from "./sections/SliderSection"
+import SpaceSection from "./sections/SpaceSection"
 
-// import SliderSection from "./sections/SliderSection"
-// import SpaceSection from "./sections/SpaceSection"
 // import StatueSection from "./sections/StatueSection"
 
 export default function Home() {
   return (
-    <div className="h-auto w-full bg-[#4338ca]">
+    <div className="h-auto w-screen bg-[#4338ca]">
       <HeroSection />
       <FixedSection />
 
+      <PinSection />
+      <PinInitialSection />
       <PinBackground />
-      {/* <SpaceSection />
+      <SpaceSection />
+
       <SliderSection />
-      <StatueSection />
+      {/* <StatueSection /> */}
       <BioSection />
       <ImagesSection />
-      <EndSection /> */}
+      <EndSection />
     </div>
   )
 }

@@ -1,4 +1,11 @@
-import { Afacad, Agdasima, EB_Garamond, Poppins, Syne } from "next/font/google"
+import {
+  Afacad,
+  Agdasima,
+  EB_Garamond,
+  Poppins,
+  Schibsted_Grotesk,
+  Syne,
+} from "next/font/google"
 import localFont from "next/font/local"
 
 export const geistSans = localFont({
@@ -51,6 +58,11 @@ export const AgdasimaFont = Agdasima({
 })
 
 export const AfacadFont = Afacad({
+  subsets: ["latin"],
+  display: "swap",
+})
+
+export const SchibstedFont = Schibsted_Grotesk({
   subsets: ["latin"],
   display: "swap",
 })

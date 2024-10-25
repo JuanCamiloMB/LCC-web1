@@ -15,7 +15,7 @@ export default function mountLenis() {
     gsap.registerPlugin(ScrollTrigger)
 
     gsap.ticker.add((time) => {
-      lenis.raf(time * 800)
+      lenis.raf(time * 600)
     })
 
     gsap.ticker.lagSmoothing(0)

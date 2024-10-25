@@ -85,8 +85,8 @@ export default function HeroSection() {
       scrollTrigger: {
         trigger: "#hero-section",
         start: "top top",
-        endTrigger: "#cards-section",
-        end: "bottom top",
+        endTrigger: "#pin-initial-section",
+        end: "bottom bottom",
         pin: true,
         pinSpacing: false,
       },
@@ -94,20 +94,20 @@ export default function HeroSection() {
 
     gsap.to(".hero-image", {
       scrollTrigger: {
-        trigger: "#cards-section",
+        trigger: "#pin-initial-section",
         start: "5% bottom",
         end: "bottom top",
         scrub: true,
       },
       ease: "none",
-      xPercent: -34,
+      xPercent: -30,
     })
 
     gsap.to(".hero-title", {
       scrollTrigger: {
-        trigger: "#cards-section",
-        start: "10% bottom",
-        end: "70% bottom",
+        trigger: "#pin-initial-section",
+        start: "20% bottom",
+        end: "bottom bottom",
         scrub: true,
       },
       ease: "none",
@@ -116,18 +116,18 @@ export default function HeroSection() {
 
     gsap.to(".bar-section", {
       scrollTrigger: {
-        trigger: "#cards-section",
+        trigger: "#pin-initial-section",
         start: "10% bottom",
-        end: "70% bottom",
+        end: "bottom bottom",
         scrub: true,
       },
       ease: "power1.inOut",
-      xPercent: -100,
+      xPercent: -40,
     })
 
     ScrollTrigger.create({
-      trigger: "#hero-section",
-      start: "60% center",
+      trigger: "#pin-initial-section",
+      start: "top bottom",
       end: () => "+=100",
       scrub: true,
       onEnter: () => {
@@ -138,14 +138,7 @@ export default function HeroSection() {
           duration: 0.25,
         })
       },
-      onLeave: () => {
-        gsap.to(".header-icon", {
-          scale: 0.3,
-          rotate: 180,
-          ease: "none",
-          duration: 0.25,
-        })
-      },
+
       onEnterBack: () => {
         gsap.to(".header-icon", {
           scale: 0.5,

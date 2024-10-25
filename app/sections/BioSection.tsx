@@ -94,7 +94,7 @@ export default function BioSection() {
   return (
     <section
       id="bio-section-container"
-      className="relative z-10 h-screen w-screen bg-white"
+      className="relative z-20 h-screen w-screen bg-white"
     >
       <div className="bio-section h-full w-full origin-center bg-black p-5">
         <div
