@@ -72,7 +72,7 @@ export default function EndSection() {
         </div>
         <div
           className={
-            "text-[200px] font-bold uppercase leading-[1] tracking-tighter text-gray-200"
+            "text-5xl font-bold uppercase leading-[1] tracking-tighter text-gray-200 md:text-9xl lg:text-[200px]"
           }
         >
           Motion Scape
