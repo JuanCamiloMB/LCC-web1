@@ -14,7 +14,81 @@ export default function PinSection() {
   const [activeImageIndex, setActiveImageIndex] = useState(0)
 
   /* Box Scroll Animation */
+  // useEffect(() => {
+  //   gsap.to(".pinned", {
+  //     scrollTrigger: {
+  //       trigger: ".pinned",
+  //       start: "top top",
+  //       endTrigger: "#space-section",
+  //       end: "bottom top",
+  //       pin: true,
+  //       pinSpacing: false,
+  //     },
+  //   })
+
+  //   gsap.to(".pin-box", {
+  //     scrollTrigger: {
+  //       trigger: "#pin-content-section-1",
+  //       start: "40% bottom",
+  //       end: "top top",
+  //       scrub: true,
+  //       onEnter: () => {
+  //         gsap.to(".pin-box", {
+  //           width: 290,
+  //           height: 380,
+  //         })
+  //       },
+  //       onLeaveBack: () => {
+  //         gsap.to(".pin-box", {
+  //           width: 300,
+  //           height: 260,
+  //         })
+  //       },
+  //     },
+  //   })
+
+  //   gsap.to(".pin-box", {
+  //     scrollTrigger: {
+  //       trigger: "#pin-content-section-2",
+  //       start: "50% bottom",
+  //       end: "bottom bottom",
+  //       scrub: true,
+  //       onEnter: () => {
+  //         gsap.to(".pin-box", {
+  //           width: 380,
+  //           height: 250,
+  //         })
+  //       },
+  //       onLeaveBack: () => {
+  //         gsap.to(".pin-box", {
+  //           width: 290,
+  //           height: 380,
+  //         })
+  //       },
+  //     },
+  //   })
+
+  //   gsap.to(".pin-box", {
+  //     scrollTrigger: {
+  //       trigger: "#space-section",
+  //       start: "55% bottom",
+  //       end: "bottom top",
+  //       scrub: true,
+  //       onUpdate: (self) => {
+  //         const scale = 1 + 10 * self.progress
+
+  //         gsap.to(".pin-box", {
+  //           scale,
+  //           ease: "power1.out",
+  //         })
+  //       },
+  //     },
+  //   })
+  // }, [])
   useEffect(() => {
+    const isMobile = window.innerWidth <= 768 // Set a threshold for mobile (e.g., 768px)
+
+    // Adjust scroll animations for desktop
     gsap.to(".pinned", {
       scrollTrigger: {
         trigger: ".pinned",
@@ -34,14 +108,14 @@ export default function PinSection() {
         scrub: true,
         onEnter: () => {
           gsap.to(".pin-box", {
-            width: 290,
-            height: 380,
+            width: isMobile ? 200 : 290, // Adjust width for mobile
+            height: isMobile ? 280 : 380, // Adjust height for mobile
           })
         },
         onLeaveBack: () => {
           gsap.to(".pin-box", {
-            width: 300,
-            height: 260,
+            width: isMobile ? 210 : 300,
+            height: isMobile ? 240 : 260,
           })
         },
       },
@@ -55,14 +129,14 @@ export default function PinSection() {
         scrub: true,
         onEnter: () => {
           gsap.to(".pin-box", {
-            width: 380,
-            height: 250,
+            width: isMobile ? 300 : 380,
+            height: isMobile ? 220 : 250,
           })
         },
         onLeaveBack: () => {
           gsap.to(".pin-box", {
-            width: 290,
-            height: 380,
+            width: isMobile ? 200 : 290,
+            height: isMobile ? 280 : 380,
           })
         },
       },
@@ -75,8 +149,7 @@ export default function PinSection() {
         end: "bottom top",
         scrub: true,
         onUpdate: (self) => {
-          const scale = 1 + 10 * self.progress
-
+          const scale = 1 + 10 * self.progress // Adjust scaling for mobile
           gsap.to(".pin-box", {
             scale,
             ease: "power1.out",
@@ -238,7 +311,7 @@ export default function PinSection() {
 
   return (
     <section className="pinned absolute top-[120vh] z-20 h-screen w-screen md:top-[100vh]">
-      <div className="pin-box absolute left-1/2 top-1/2 h-[260px] w-[300px] -translate-x-1/2 -translate-y-1/2 scale-100 border-[1px] border-white bg-white shadow-md">
+      <div className="pin-box absolute left-1/2 top-1/2 h-[160px] w-[200px] -translate-x-1/2 -translate-y-1/2 scale-100 border-[1px] border-white bg-white shadow-md md:h-[260px] md:w-[300px]">
         <div className="pin-gif-wrapper h-full w-full">
           <img
             alt="pin-gif-1"

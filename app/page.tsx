@@ -9,8 +9,6 @@ import PinSection from "./sections/PinSection"
 import SliderSection from "./sections/SliderSection"
 import SpaceSection from "./sections/SpaceSection"
 
-// import StatueSection from "./sections/StatueSection"
-
 export default function Home() {
   return (
     <div className="h-auto w-screen bg-[#4338ca]">
@@ -23,7 +21,6 @@ export default function Home() {
       <SpaceSection />
 
       <SliderSection />
-      {/* <StatueSection /> */}
       <BioSection />
       <ImagesSection />
       <EndSection />

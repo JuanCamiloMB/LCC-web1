@@ -105,7 +105,7 @@ export default function PinInitialSection() {
           </div>
         </div>
 
-        <div className="flex h-full w-full flex-col items-center justify-between md:flex-row md:items-start">
+        <div className="flex h-full w-full flex-col items-center justify-between gap-10 md:flex-row md:items-start">
           <div className="flex h-full flex-col items-end justify-between gap-10">
             <div className="flex w-full flex-col items-start gap-2">
               <div className="overflow-hidden">
@@ -193,13 +193,13 @@ export default function PinInitialSection() {
               )}
             >
               <div className="overflow-hidden">
-                <div className="pin-initial-text relative text-4xl font-semibold tracking-tight">
+                <div className="pin-initial-text relative text-3xl font-semibold tracking-tight lg:text-4xl">
                   IT IS MY ANIMATION
                   <div className="absolute bottom-0 h-[0.5px] w-full bg-gray-200" />
                 </div>
               </div>
               <div className="overflow-hidden">
-                <div className="pin-initial-text relative text-4xl font-semibold tracking-tight">
+                <div className="pin-initial-text relative text-3xl font-semibold tracking-tight lg:text-4xl">
                   JOURNEY
                   <div className="absolute bottom-0 h-[0.5px] w-full bg-gray-200" />
                 </div>

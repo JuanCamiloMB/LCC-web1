@@ -136,12 +136,12 @@ export default function PinBackground() {
         id="pin-content-section-1"
         className={cn(
           SchibstedFont.className,
-          "relative z-10 flex h-[200vh] w-screen items-center bg-black px-[4%]"
+          "relative z-10 flex h-[200vh] w-screen flex-col items-center bg-black px-[4%] lg:flex-row"
         )}
       >
-        <div className="mt-[50%] flex w-full items-start justify-between">
-          <div className="flex w-[30%] flex-col gap-6">
-            <div className="flex flex-col gap-1">
+        <div className="mt-[300%] flex w-full flex-col items-start justify-between gap-24 lg:mt-[50%] lg:flex-row">
+          <div className="flex w-full flex-col gap-6 lg:w-[30%]">
+            <div className="flex w-full flex-col gap-1">
               <div className="overflow-hidden">
                 <div className="pin-bg-text -translate-y-[100%] text-5xl font-medium leading-[1] tracking-wider text-white">
                   EXPLORE
@@ -162,7 +162,7 @@ export default function PinBackground() {
               something for everyone.
             </div>
           </div>
-          <div className="flex w-[30%] flex-col gap-6 pr-[2%]">
+          <div className="flex w-full flex-col gap-6 pr-[2%] lg:w-[30%]">
             <div className="overflow-hidden">
               <div className="pin-bg-text -translate-y-[100%] text-5xl font-medium tracking-wider text-white">
                 ABOUT ME
@@ -207,10 +207,10 @@ export default function PinBackground() {
         id="pin-content-section-2"
         className="relative z-10 h-[200vh] w-screen bg-black px-4"
       >
-        <div className="flex flex-col gap-10 pt-[60%]">
-          <div className="flex items-end justify-start gap-8">
+        <div className="flex flex-col gap-14 pt-[240%] md:gap-40 lg:gap-10 lg:pt-[60%]">
+          <div className="flex flex-col items-start justify-start gap-8 md:flex-row md:items-end">
             <div className="overflow-hidden">
-              <div className="last-text w-[60%] -translate-y-[100%] text-[200px] font-bold leading-[1] text-white">
+              <div className="last-text -translate-y-[100%] text-7xl font-bold leading-[1] text-white md:text-8xl lg:text-[200px]">
                 VISHION
               </div>
             </div>
@@ -236,9 +236,9 @@ export default function PinBackground() {
             </div>
           </div>
 
-          <div className="flex flex-row-reverse items-end justify-start gap-8">
+          <div className="flex flex-col items-end justify-start gap-8 md:flex-row-reverse">
             <div className="overflow-hidden">
-              <div className="last-text -translate-y-[100%] text-[200px] font-bold leading-[1] text-white">
+              <div className="last-text -translate-y-[100%] text-7xl font-bold leading-[1] text-white md:text-8xl lg:text-[200px]">
                 CRAFT
               </div>
             </div>
@@ -262,9 +262,9 @@ export default function PinBackground() {
             </div>
           </div>
 
-          <div className="flex items-end justify-start gap-8">
+          <div className="flex flex-col items-start justify-start gap-8 md:flex-row md:items-end">
             <div className="overflow-hidden">
-              <div className="last-text -translate-y-[100%] text-[200px] font-bold leading-[1] text-white">
+              <div className="last-text -translate-y-[100%] text-7xl font-bold leading-[1] text-white md:text-8xl lg:text-[200px]">
                 TECH
               </div>
             </div>
