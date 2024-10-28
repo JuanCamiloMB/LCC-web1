@@ -86,15 +86,15 @@ export default function ImagesSection() {
   return (
     <section
       id="images-section-container"
-      className="relative z-20 h-[400vh] w-screen bg-white"
+      className="relative z-[31] h-[400vh] w-screen bg-white"
     >
-      <div className="images-section sticky left-0 top-0 h-screen origin-center scale-50 overflow-hidden bg-black">
+      <div className="images-section sticky left-0 top-0 z-50 h-screen origin-center scale-50 overflow-hidden bg-black">
         {/* Hero Content */}
-        <div className="relative left-0 top-0 z-[2] flex h-full flex-col items-center justify-center gap-10">
+        <div className="relative left-0 top-0 flex h-full flex-col items-center justify-center gap-10">
           <div
             className={cn(
               PoppinFont.className,
-              "max-w-[80%] text-center text-5xl font-extrabold tracking-wide text-indigo-200 md:max-w-[30%] md:text-7xl"
+              "max-w-[80%] text-center text-5xl font-extrabold tracking-wide text-indigo-300 md:max-w-[30%] md:text-7xl"
             )}
           >
             Made With Passion
@@ -114,7 +114,7 @@ export default function ImagesSection() {
                 AfacadFont.className
               )}
             >
-              View On Github
+              Star On Github
             </a>
             <GitHubLogoIcon />
           </button>
