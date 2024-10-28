@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { geistMono, geistSans } from "./fonts"
 import "./globals.css"
 import Header from "./layouts/Header"
+import Socials from "./layouts/Socials"
 
 export const metadata: Metadata = {
   title: "MotionScape",
@@ -21,6 +22,7 @@ export default function RootLayout({
       >
         {/* <ScreenLoader /> */}
         <Header />
+        <Socials />
         <Analytics />
         {children}
       </body>
