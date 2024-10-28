@@ -1,12 +1,15 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
 import gsap from "gsap"
-// import SplitType from "split-type"
+import ScrollTrigger from "gsap/dist/ScrollTrigger"
+import { RoughNotation } from "react-rough-notation"
 import { PoppinFont, reckoner } from "../fonts"
 
 export default function PinInitialSection() {
+  const [notation, setNotation] = useState(false)
+
   useEffect(() => {
     gsap.fromTo(
       "#pin-initial-section",
@@ -28,49 +31,17 @@ export default function PinInitialSection() {
       }
     )
 
-    // gsap.to(".awward-name", {
-    //   scrollTrigger: {
-    //     trigger: "#pin-initial-section",
-    //     start: "top bottom",
-    //     end: "bottom top",
-    //     scrub: true,
-    //   },
-    //   background: "white",
-    // })
-
-    // gsap.to(".awward-text", {
-    //   scrollTrigger: {
-    //     trigger: "#pin-initial-section",
-    //     start: "top bottom",
-    //     end: "bottom top",
-    //     scrub: true,
-    //   },
-    //   color: "black",
-    // })
-
-    // const pinInitialDescription = new SplitType(".pin-initial-description", {
-    //   types: "lines",
-    //   tagName: "span",
-    // })
-
-    // pinInitialDescription.lines?.forEach((line) => {
-    //   const wrapper = document.createElement("div")
-    //   wrapper.classList.add("overflow-hidden")
-    //   line.parentNode?.insertBefore(wrapper, line)
-    //   wrapper.appendChild(line)
-    // })
-
-    // const pinInitialDescription2 = new SplitType(".pin-initial-description-2", {
-    //   types: "lines",
-    //   tagName: "span",
-    // })
-
-    // pinInitialDescription2.lines?.forEach((line) => {
-    //   const wrapper = document.createElement("div")
-    //   wrapper.classList.add("overflow-hidden")
-    //   line.parentNode?.insertBefore(wrapper, line)
-    //   wrapper.appendChild(line)
-    // })
+    ScrollTrigger.create({
+      trigger: "#pin-initial-section",
+      start: "80% bottom",
+      scrub: true,
+      onEnter: () => {
+        setNotation(true)
+      },
+      onLeaveBack: () => {
+        setNotation(false)
+      },
+    })
   }, [])
 
   return (
@@ -81,7 +52,7 @@ export default function PinInitialSection() {
       }}
       className="relative h-[120vh] w-screen bg-black"
     >
-      <section className="flex h-full w-full flex-col items-start gap-48 p-4">
+      <section className="flex h-full w-full flex-col items-start gap-48 px-4 py-4 pt-[80%] md:pt-4">
         <div className="flex w-full items-center gap-4">
           <div className="flex w-full flex-col items-start">
             <p
@@ -127,6 +98,15 @@ export default function PinInitialSection() {
                 >
                   FIRST RELEASE.
                 </div>
+              </div>
+              <div
+                className={cn(
+                  PoppinFont.className,
+                  "pin-initial-description-2 max-w-[340px] text-xs font-medium text-gray-300"
+                )}
+              >
+                Remember that progress isn&apos;t always linear, and setbacks
+                are just part of the process.
               </div>
               <div className="overflow-hidden">
                 <div
@@ -187,22 +167,31 @@ export default function PinInitialSection() {
             </div>
 
             <div
-              className={cn(
-                PoppinFont.className,
-                "flex flex-col items-start gap-2 overflow-hidden text-white"
-              )}
+              className={
+                "relative flex flex-col items-start gap-6 overflow-hidden text-white"
+              }
             >
-              <div className="overflow-hidden">
-                <div className="pin-initial-text relative text-3xl font-semibold tracking-tight lg:text-4xl">
-                  IT IS MY ANIMATION
-                  <div className="absolute bottom-0 h-[0.5px] w-full bg-gray-200" />
+              <RoughNotation color="#4f46e5" type="highlight" show={notation}>
+                <div
+                  className={cn(
+                    reckoner.className,
+                    "px-4 py-1 text-3xl font-medium tracking-widest"
+                  )}
+                >
+                  Animation Journey
                 </div>
-              </div>
-              <div className="overflow-hidden">
-                <div className="pin-initial-text relative text-3xl font-semibold tracking-tight lg:text-4xl">
-                  JOURNEY
-                  <div className="absolute bottom-0 h-[0.5px] w-full bg-gray-200" />
-                </div>
+              </RoughNotation>
+
+              <div
+                className={cn(
+                  PoppinFont.className,
+                  "pin-initial-description-2 max-w-[340px] text-xs font-medium text-gray-300"
+                )}
+              >
+                Surround yourself with people who push you to grow, inspire you
+                to reach higher, and remind you of your potential. Remember that
+                progress isn&apos;t always linear, and setbacks are just part of
+                the process.
               </div>
             </div>
           </div>

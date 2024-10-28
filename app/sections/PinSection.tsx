@@ -19,6 +19,7 @@ export default function PinSection() {
 
   /* Box Scale Animation */
   useEffect(() => {
+    const isMobile = window.innerWidth < 768
     gsap.to(".pinned", {
       scrollTrigger: {
         trigger: ".pinned",
@@ -65,7 +66,7 @@ export default function PinSection() {
         end: "bottom top",
         scrub: true,
         onUpdate: (self) => {
-          const scale = 1 + 10 * self.progress
+          const scale = isMobile ? 24 * self.progress : 1 + 10 * self.progress
 
           gsap.to(".pin-box", {
             scale,
@@ -246,9 +247,9 @@ export default function PinSection() {
   }, [])
 
   return (
-    <section className="pinned absolute top-[120vh] z-20 h-screen w-screen md:top-[100vh]">
+    <section className="pinned absolute top-[100vh] z-20 h-screen w-screen md:top-[100vh]">
       {/* Box */}
-      <div className="pin-box absolute left-1/2 top-1/2 z-10 h-[160px] w-[200px] -translate-x-1/2 -translate-y-1/2 scale-100 overflow-hidden border-[1px] border-white bg-white shadow-md md:h-[260px] md:w-[300px]">
+      <div className="pin-box absolute left-1/2 top-[10%] z-10 h-[160px] w-[200px] -translate-x-1/2 scale-100 overflow-hidden border-[1px] border-white bg-white shadow-md md:top-1/2 md:h-[260px] md:w-[300px] md:-translate-y-1/2">
         <div className="pin-gif-wrapper absolute left-0 top-0 z-[5] h-full w-full">
           {images.map((src, index) => (
             <img
@@ -281,10 +282,13 @@ export default function PinSection() {
       {/* Box */}
 
       {/* Content */}
-      <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center">
-        <div id="content-section" className="h-fit w-full max-w-[95%]">
-          <div className="flex items-center justify-between">
-            <div className="flex w-[30%] flex-col gap-6">
+      <div className="absolute left-0 top-0 mt-[40%] flex h-full w-full items-center justify-center md:mt-0">
+        <div
+          id="content-section"
+          className="h-fit w-full max-w-[85%] md:max-w-[95%]"
+        >
+          <div className="flex w-full flex-col items-center justify-between gap-20 md:flex-row">
+            <div className="flex w-full flex-col gap-6 md:w-[30%]">
               <div className="flex flex-col gap-1">
                 <div className="overflow-hidden">
                   <div
@@ -314,7 +318,7 @@ export default function PinSection() {
               </div>
             </div>
 
-            <div className="flex w-[30%] flex-col gap-6 pr-[2%]">
+            <div className="flex w-full flex-col gap-6 pr-[2%] md:w-[30%]">
               <div className="overflow-hidden">
                 <div
                   id="pin-content-text-1"
@@ -345,10 +349,13 @@ export default function PinSection() {
         </div>
       </div>
 
-      <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center">
-        <div id="content-section-2" className="h-fit w-full max-w-[95%]">
-          <div className="flex items-center justify-between">
-            <div className="flex w-[30%] flex-col gap-6">
+      <div className="absolute left-0 top-0 mt-[40%] flex h-full w-full items-center justify-center md:mt-0">
+        <div
+          id="content-section-2"
+          className="h-fit w-full max-w-[85%] md:max-w-[95%]"
+        >
+          <div className="flex flex-col items-center justify-between gap-20 md:flex-row">
+            <div className="flex w-full flex-col gap-6 md:w-[30%]">
               <div className="flex flex-col gap-1">
                 <div className="overflow-hidden">
                   <div
@@ -379,7 +386,7 @@ export default function PinSection() {
               </div>
             </div>
 
-            <div className="flex w-[30%] flex-col gap-6 pr-[2%]">
+            <div className="flex w-full flex-col gap-6 pr-[2%] md:w-[30%]">
               <div className="overflow-hidden">
                 <div
                   id="pin-content-text-2"

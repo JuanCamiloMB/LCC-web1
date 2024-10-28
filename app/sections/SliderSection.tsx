@@ -204,7 +204,7 @@ export default function SliderSection() {
             <div
               className={cn(
                 AfacadFont.className,
-                "slider-description w-[60%] text-xs font-semibold leading-[1] tracking-tight text-black"
+                "slider-description w-[60%] text-xs font-semibold leading-[1] tracking-normal text-black"
               )}
             >
               Don’t just design; engineer your success by leveraging data-driven
