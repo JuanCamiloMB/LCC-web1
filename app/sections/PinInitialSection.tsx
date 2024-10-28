@@ -3,7 +3,7 @@
 import { useEffect } from "react"
 import { cn } from "@/lib/utils"
 import gsap from "gsap"
-import SplitType from "split-type"
+// import SplitType from "split-type"
 import { PoppinFont, reckoner } from "../fonts"
 
 export default function PinInitialSection() {
@@ -28,49 +28,49 @@ export default function PinInitialSection() {
       }
     )
 
-    gsap.to(".awward-name", {
-      scrollTrigger: {
-        trigger: "#pin-initial-section",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
-      background: "white",
-    })
+    // gsap.to(".awward-name", {
+    //   scrollTrigger: {
+    //     trigger: "#pin-initial-section",
+    //     start: "top bottom",
+    //     end: "bottom top",
+    //     scrub: true,
+    //   },
+    //   background: "white",
+    // })
 
-    gsap.to(".awward-text", {
-      scrollTrigger: {
-        trigger: "#pin-initial-section",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
-      color: "black",
-    })
+    // gsap.to(".awward-text", {
+    //   scrollTrigger: {
+    //     trigger: "#pin-initial-section",
+    //     start: "top bottom",
+    //     end: "bottom top",
+    //     scrub: true,
+    //   },
+    //   color: "black",
+    // })
 
-    const pinInitialDescription = new SplitType(".pin-initial-description", {
-      types: "lines",
-      tagName: "span",
-    })
+    // const pinInitialDescription = new SplitType(".pin-initial-description", {
+    //   types: "lines",
+    //   tagName: "span",
+    // })
 
-    pinInitialDescription.lines?.forEach((line) => {
-      const wrapper = document.createElement("div")
-      wrapper.classList.add("overflow-hidden")
-      line.parentNode?.insertBefore(wrapper, line)
-      wrapper.appendChild(line)
-    })
+    // pinInitialDescription.lines?.forEach((line) => {
+    //   const wrapper = document.createElement("div")
+    //   wrapper.classList.add("overflow-hidden")
+    //   line.parentNode?.insertBefore(wrapper, line)
+    //   wrapper.appendChild(line)
+    // })
 
-    const pinInitialDescription2 = new SplitType(".pin-initial-description-2", {
-      types: "lines",
-      tagName: "span",
-    })
+    // const pinInitialDescription2 = new SplitType(".pin-initial-description-2", {
+    //   types: "lines",
+    //   tagName: "span",
+    // })
 
-    pinInitialDescription2.lines?.forEach((line) => {
-      const wrapper = document.createElement("div")
-      wrapper.classList.add("overflow-hidden")
-      line.parentNode?.insertBefore(wrapper, line)
-      wrapper.appendChild(line)
-    })
+    // pinInitialDescription2.lines?.forEach((line) => {
+    //   const wrapper = document.createElement("div")
+    //   wrapper.classList.add("overflow-hidden")
+    //   line.parentNode?.insertBefore(wrapper, line)
+    //   wrapper.appendChild(line)
+    // })
   }, [])
 
   return (

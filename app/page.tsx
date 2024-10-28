@@ -14,12 +14,10 @@ export default function Home() {
     <div className="h-auto w-screen bg-[#4338ca]">
       <HeroSection />
       <FixedSection />
-
       <PinSection />
       <PinInitialSection />
       <PinBackground />
       <SpaceSection />
-
       <SliderSection />
       <BioSection />
       <ImagesSection />
