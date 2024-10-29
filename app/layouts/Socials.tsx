@@ -32,7 +32,7 @@ export default function Socials() {
     })
   }, [])
   return (
-    <div className="fixed top-0 z-50 flex w-screen justify-end bg-transparent py-5 pr-10">
+    <div className="fixed top-0 z-50 hidden w-screen justify-end bg-transparent py-5 pr-10 md:flex">
       <div
         className={cn(
           reckoner.className,

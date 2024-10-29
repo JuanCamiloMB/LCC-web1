@@ -128,7 +128,7 @@ export default function ImagesSection() {
           }}
         >
           <div className="flex flex-col gap-[16vw] pt-[70vh] will-change-transform">
-            <div className="relative h-[200px] w-[50vw] overflow-hidden rounded-md md:h-[400px] md:w-[22vw]">
+            <div className="relative h-[200px] w-[50vw] overflow-hidden rounded-md lg:h-[400px] lg:w-[22vw]">
               <Image
                 src={Image1}
                 priority
@@ -137,7 +137,7 @@ export default function ImagesSection() {
               />
             </div>
 
-            <div className="relative h-[200px] w-[50vw] overflow-hidden rounded-md md:h-[400px] md:w-[22vw]">
+            <div className="relative h-[200px] w-[50vw] overflow-hidden rounded-md lg:h-[400px] lg:w-[22vw]">
               <Image
                 src={Image2}
                 priority
@@ -146,7 +146,7 @@ export default function ImagesSection() {
               />
             </div>
 
-            <div className="relative left-1 mt-[5vw] h-[200px] w-[40vw] overflow-hidden rounded-md md:left-[4vw] md:mt-[-10vw] md:h-[400px] md:w-[20vw]">
+            <div className="relative left-1 mt-[5vw] h-[200px] w-[40vw] overflow-hidden rounded-md md:left-[4vw] md:mt-[-10vw] lg:h-[400px] lg:w-[20vw]">
               <Image
                 src={Image3}
                 priority
@@ -155,7 +155,7 @@ export default function ImagesSection() {
               />
             </div>
 
-            <div className="relative left-[55vw] top-[-120vw] mt-[-45vw] h-[200px] w-[40vw] overflow-hidden rounded-md md:left-[64vw] md:top-[-73.4vw] md:h-[400px] md:w-[20vw]">
+            <div className="relative left-[55vw] top-[-120vw] mt-[-45vw] h-[200px] w-[40vw] overflow-hidden rounded-md md:left-[64vw] md:top-[-73.4vw] lg:h-[400px] lg:w-[20vw]">
               <Image
                 src={Image4}
                 priority
@@ -164,7 +164,7 @@ export default function ImagesSection() {
               />
             </div>
 
-            <div className="relative left-[58vw] mt-[-75vw] h-[200px] w-[50vw] overflow-hidden rounded-md md:h-[400px] md:w-[22vw]">
+            <div className="relative left-[58vw] mt-[-75vw] h-[200px] w-[50vw] overflow-hidden rounded-md lg:h-[400px] lg:w-[22vw]">
               <Image
                 src={Image5}
                 priority
@@ -173,7 +173,7 @@ export default function ImagesSection() {
               />
             </div>
 
-            <div className="relative left-[64vw] mt-[-10vw] h-[200px] w-[40vw] overflow-hidden rounded-md md:h-[400px] md:w-[20vw]">
+            <div className="relative left-[64vw] mt-[-10vw] h-[200px] w-[40vw] overflow-hidden rounded-md lg:h-[400px] lg:w-[20vw]">
               <Image
                 src={Image6}
                 priority
@@ -192,7 +192,7 @@ export default function ImagesSection() {
           }}
         >
           <div className="flex flex-col gap-[16vw] pt-[70vh] will-change-transform">
-            <div className="relative right-[60vw] top-[14vw] h-[200px] w-[18vw] overflow-hidden rounded-md text-white opacity-75 md:h-[400px]">
+            <div className="relative right-[60vw] top-[14vw] h-[200px] w-[18vw] overflow-hidden rounded-md text-white opacity-75 lg:h-[400px]">
               <Image
                 src={Image7}
                 priority
@@ -201,7 +201,7 @@ export default function ImagesSection() {
               />
             </div>
 
-            <div className="relative right-[58vw] mt-[5vw] h-[100px] w-[50vw] overflow-hidden rounded-md text-white opacity-75 md:h-[400px] lg:w-[22vw]">
+            <div className="relative right-[58vw] mt-[5vw] h-[100px] w-[50vw] overflow-hidden rounded-md text-white opacity-75 lg:h-[400px] lg:w-[22vw]">
               <Image
                 src={Image8}
                 priority
@@ -210,7 +210,7 @@ export default function ImagesSection() {
               />
             </div>
 
-            <div className="relative right-[5vw] top-[-70vw] h-[100px] w-[40vw] overflow-hidden rounded-md text-white opacity-75 md:h-[400px] lg:w-[20vw]">
+            <div className="relative right-[5vw] top-[-70vw] h-[100px] w-[40vw] overflow-hidden rounded-md text-white opacity-75 lg:h-[400px] lg:w-[20vw]">
               <Image
                 src={Image9}
                 priority
@@ -219,7 +219,7 @@ export default function ImagesSection() {
               />
             </div>
 
-            <div className="relative right-[15vw] top-[-80vw] h-[200px] w-[40vw] overflow-hidden rounded-md text-white opacity-75 md:h-[360px] md:w-[20vw]">
+            <div className="relative right-[15vw] top-[-80vw] h-[200px] w-[40vw] overflow-hidden rounded-md text-white opacity-75 lg:h-[360px] lg:w-[20vw]">
               <Image
                 src={Image10}
                 priority

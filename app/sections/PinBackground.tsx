@@ -16,7 +16,7 @@ export default function PinBackground() {
         <div className="m-auto hidden pt-[30%] text-9xl font-extrabold uppercase text-gray-300 md:block">
           talent or
         </div>
-        <div className="m-auto block pt-[30%] text-9xl font-extrabold uppercase text-gray-300 md:hidden">
+        <div className="m-auto block pt-[30%] text-9xl font-extrabold uppercase text-gray-300 opacity-20 md:hidden md:opacity-100">
           01
         </div>
       </section>
@@ -30,7 +30,7 @@ export default function PinBackground() {
         <div className="m-auto hidden pt-[30%] text-9xl font-extrabold uppercase text-gray-300 md:block">
           HARD WORK
         </div>
-        <div className="m-auto block pt-[30%] text-9xl font-extrabold uppercase text-gray-300 md:hidden">
+        <div className="m-auto block pt-[30%] text-9xl font-extrabold uppercase text-gray-300 opacity-20 md:hidden md:opacity-100">
           02
         </div>
       </section>

@@ -36,6 +36,7 @@ export default function PinSection() {
       scaleY: 1.7,
       ease: "none",
       duration: 5,
+      immediateRender: false,
       scrollTrigger: {
         trigger: "#pin-content-section-1",
         start: "32% bottom",
@@ -44,36 +45,85 @@ export default function PinSection() {
       },
     })
 
-    gsap.to(".pin-box", {
-      scaleX: 1.4,
-      scaleY: 1.2,
-      ease: "none",
-      duration: 5,
+    let mm = gsap.matchMedia()
 
-      immediateRender: false,
-      scrollTrigger: {
-        trigger: "#pin-content-section-2",
-        start: "32% bottom",
-        end: "80% bottom",
-        scrub: true,
-      },
+    /* Desktop */
+    mm.add("(min-width: 800px)", () => {
+      gsap.to(".pin-box", {
+        scaleX: 1.4,
+        scaleY: 1.2,
+        ease: "none",
+        duration: 5,
+
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: "#pin-content-section-2",
+          start: "32% bottom",
+          end: "80% bottom",
+          scrub: true,
+        },
+      })
     })
 
-    gsap.to(".pin-box", {
-      scrollTrigger: {
-        trigger: "#space-section",
-        start: "20% bottom",
-        end: "bottom top",
-        scrub: true,
-        onUpdate: (self) => {
-          const scale = isMobile ? 24 * self.progress : 1 + 10 * self.progress
+    mm.add("(min-width: 800px)", () => {
+      gsap.to(".pin-box", {
+        scrollTrigger: {
+          trigger: "#space-section",
+          start: "20% bottom",
+          end: "bottom top",
+          scrub: true,
+          immediateRender: false,
 
-          gsap.to(".pin-box", {
-            scale,
-            ease: "power1.out",
-          })
+          onUpdate: (self) => {
+            const scale = 1 + 10 * self.progress
+
+            gsap.to(".pin-box", {
+              scale,
+              ease: "none",
+            })
+          },
         },
-      },
+      })
+    })
+
+    /* Mobile */
+    mm.add("(max-width: 799px)", () => {
+      gsap.to(".pin-box", {
+        scaleX: 0.9,
+        scaleY: 1.9,
+        ease: "none",
+        duration: 5,
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: "#pin-content-section-2",
+          start: "32% bottom",
+          end: "80% bottom",
+          scrub: true,
+        },
+      })
+    })
+
+    mm.add("(max-width: 799px)", () => {
+      gsap.to(".pin-box", {
+        scrollTrigger: {
+          trigger: "#space-section",
+          start: "20% bottom",
+          end: "bottom top",
+          scrub: true,
+          immediateRender: false,
+          // onUpdate: (self) => {
+          //   const scale = 20 * self.progress
+
+          //   gsap.to(".pin-box", {
+          //     scale,
+          //     ease: "none",
+          //   })
+          // },
+        },
+        ease: "none",
+        scaleX: 4,
+        scaleY: 20,
+      })
     })
   }, [])
 
