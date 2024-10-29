@@ -173,62 +173,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="bar absolute bottom-0 inline-flex h-auto w-full items-center overflow-hidden bg-gray-900 px-20 py-1">
-        <div className="bar-section flex w-full shrink-0 items-center gap-14">
-          <div
-            className={cn(
-              SyneFont.className,
-              "flex-none text-[20px] font-extrabold text-white"
-            )}
-          >
-            DISCUSS YOUR IDEA
-          </div>
-
-          <Image
-            src={Star}
-            className="h-7 w-7 object-contain"
-            alt="star-icon"
-          />
-
-          <div
-            className={cn(
-              SyneFont.className,
-              "flex-none text-[20px] font-extrabold text-white"
-            )}
-          >
-            EXPEND VISION
-          </div>
-
-          <Image
-            src={Star}
-            className="h-7 w-7 object-contain"
-            alt="star-icon"
-          />
-
-          <div
-            className={cn(
-              SyneFont.className,
-              "flex-none text-[20px] font-extrabold text-white"
-            )}
-          >
-            BE MOTIVATED
-          </div>
-
-          <Image
-            src={Star}
-            className="h-7 w-7 object-contain"
-            alt="star-icon"
-          />
-
-          <div
-            className={cn(
-              SyneFont.className,
-              "flex-none text-[20px] font-extrabold text-white"
-            )}
-          >
-            ALIGN WITH PASSION
-          </div>
-        </div>
+      <div className="bar absolute bottom-0 inline-flex h-auto w-full flex-nowrap items-center overflow-hidden bg-gray-900 px-20 py-1">
         <div className="bar-section flex w-full shrink-0 items-center gap-14">
           <div
             className={cn(
