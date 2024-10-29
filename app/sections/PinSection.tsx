@@ -69,7 +69,7 @@ export default function PinSection() {
         scrollTrigger: {
           trigger: "#space-section",
           start: "20% bottom",
-          end: "bottom top",
+          end: "bottom bottom",
           scrub: true,
           immediateRender: false,
 
