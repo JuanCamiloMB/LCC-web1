@@ -19,7 +19,6 @@ export default function PinSection() {
 
   /* Box Scale Animation */
   useEffect(() => {
-    const isMobile = window.innerWidth < 768
     gsap.to(".pinned", {
       scrollTrigger: {
         trigger: ".pinned",

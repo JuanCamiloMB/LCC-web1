@@ -52,11 +52,9 @@ export default function ImagesSection() {
       scrollTrigger: {
         trigger: "#images-section-container",
         start: "bottom bottom",
-        end: "bottom top",
-        scrub: true,
+        pin: true,
+        pinSpacing: false,
       },
-      yPercent: 25,
-      ease: "none",
     })
   }, [])
 
