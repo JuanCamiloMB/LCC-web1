@@ -130,6 +130,7 @@ export default function HeroSection() {
       start: "top bottom",
       end: () => "+=100",
       scrub: true,
+
       onEnter: () => {
         gsap.to(".header-icon", {
           scale: 0.3,

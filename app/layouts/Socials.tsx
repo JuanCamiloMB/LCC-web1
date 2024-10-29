@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
+import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { reckoner } from "../fonts"
 
@@ -30,9 +31,18 @@ export default function Socials() {
         setWhiteBg(false)
       },
     })
+
+    gsap.to("#socials-section", {
+      delay: 2.6,
+      yPercent: 100,
+      ease: "circ",
+    })
   }, [])
   return (
-    <div className="fixed top-0 z-50 hidden w-screen justify-end bg-transparent py-5 pr-10 md:flex">
+    <div
+      id="socials-section"
+      className="fixed top-0 z-50 hidden w-screen -translate-y-[100%] justify-end bg-transparent py-5 pr-10 md:flex"
+    >
       <div
         className={cn(
           reckoner.className,
