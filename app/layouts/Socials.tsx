@@ -79,7 +79,7 @@ export default function Socials() {
           target="_blank"
           rel="noreferrer"
           className={cn(
-            "relative bg-indigo-600 px-2 text-lg font-medium tracking-wider text-white transition-all hover:bg-indigo-500"
+            "relative cursor-pointer bg-indigo-600 px-2 text-lg font-medium tracking-wider text-white transition-all hover:bg-indigo-500"
           )}
         >
           Portfolio.
