@@ -1,6 +1,5 @@
 import BioSection from "./sections/BioSection"
 import EndSection from "./sections/EndSection"
-import FixedSection from "./sections/FixedSection"
 import HeroSection from "./sections/HeroSection"
 import ImagesSection from "./sections/ImagesSection"
 import PinBackground from "./sections/PinBackground"
@@ -13,7 +12,6 @@ export default function Home() {
   return (
     <div className="h-auto w-screen bg-[#4338ca]">
       <HeroSection />
-      <FixedSection />
       <PinSection />
       <PinInitialSection />
       <PinBackground />

@@ -163,14 +163,14 @@ export default function HeroSection() {
 
       <div className="absolute left-1/2 top-[48%] w-fit max-w-3xl -translate-x-1/2 -translate-y-1/2 px-10 mix-blend-difference md:top-[50%] lg:left-[30%] lg:top-[26%] lg:translate-x-0 lg:translate-y-0">
         <div className="hero-title text-[4.5rem] font-extrabold leading-[1] tracking-tighter text-white md:text-[5rem] lg:text-[7.2rem]">
-          MOTION
+          Latinoamerica
         </div>
-        <div className="hero-title ml-[25%] text-[4.5rem] font-extrabold leading-[1] tracking-tighter text-white md:ml-[35%] md:text-[5rem] lg:text-[7.2rem]">
-          SC
-          <span className="title-stroke">AP</span>E
+        <div className="hero-title ml-[25%] text-[4.5rem] font-extrabold leading-[1] tracking-tighter text-white md:ml-[3%] md:text-[5rem] lg:text-[7.2rem]">
+          Cyber
+          <span className="title-stroke">sec</span>urity
         </div>
         <div className="hero-title ml-[10%] text-[4.5rem] font-extrabold leading-[1] tracking-tighter text-white md:ml-[20%] md:text-[5rem] lg:text-[7.2rem]">
-          G<span className="title-stroke">SA</span>P
+          Cha<span className="title-stroke">llen</span>ge
         </div>
       </div>
 
@@ -182,7 +182,7 @@ export default function HeroSection() {
               "flex-none text-[20px] font-extrabold text-white"
             )}
           >
-            DISCUSS YOUR IDEA
+            IDEAS
           </div>
 
           <Image
@@ -197,7 +197,7 @@ export default function HeroSection() {
               "flex-none text-[20px] font-extrabold text-white"
             )}
           >
-            EXPEND VISION
+            COMPETENCIA
           </div>
 
           <Image
@@ -212,7 +212,7 @@ export default function HeroSection() {
               "flex-none text-[20px] font-extrabold text-white"
             )}
           >
-            BE MOTIVATED
+            NETWORKING
           </div>
 
           <Image
@@ -227,7 +227,7 @@ export default function HeroSection() {
               "flex-none text-[20px] font-extrabold text-white"
             )}
           >
-            ALIGN WITH PASSION
+            CODE
           </div>
         </div>
       </div>
